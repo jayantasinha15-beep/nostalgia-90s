@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | 90s Nostalgia Machine</title>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Patrick+Hand&family=Special+Elite&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: radial-gradient(circle at 50% 25%, #3a1a0c 0%, #150904 80%, #0a0402 100%);
+      font-family: 'Patrick Hand', cursive;
+      color: #f1ede4;
+      padding: 40px 20px;
+      line-height: 1.6;
+    }
+    .paper-container {
+      max-width: 750px;
+      margin: 0 auto;
+      background: #fdfbf7;
+      color: #2b1d14;
+      border: 4px solid #d4a373;
+      border-radius: 8px;
+      padding: 36px 30px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.8);
+    }
+    h1 {
+      font-family: 'Caveat', cursive;
+      font-size: 2.8rem;
+      color: #7c2d12;
+      border-bottom: 2px dashed #d4a373;
+      padding-bottom: 8px;
+      margin-top: 0;
+    }
+    .form-group {
+      margin-bottom: 16px;
+    }
+    label {
+      display: block;
+      font-size: 1.2rem;
+      margin-bottom: 4px;
+      color: #7c2d12;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      border: 2px solid #d4a373;
+      border-radius: 4px;
+      background: #fff;
+      font-family: 'Patrick Hand', cursive;
+      font-size: 1.1rem;
+      box-sizing: border-box;
+    }
+    textarea {
+      height: 120px;
+      resize: vertical;
+    }
+    button {
+      background: #b45309;
+      color: #fff;
+      border: none;
+      padding: 10px 24px;
+      border-radius: 6px;
+      font-family: 'Caveat', cursive;
+      font-size: 1.4rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    button:hover {
+      background: #7c2d12;
+    }
+    .back-link {
+      display: inline-block;
+      margin-top: 20px;
+      font-family: 'Special Elite', cursive;
+      color: #7c2d12;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="paper-container">
+    <h1>📮 Chithi / Contact Us</h1>
+    <p>Apnar chhotobelar kono priyo smriti ba shujog thakle amader post box-e pathate paren:</p>
+
+    <form onsubmit="event.preventDefault(); alert('Chithi pathano holo! Dhonnobad.');">
+      <div class="form-group">
+        <label for="name">Tomar Naam (Name):</label>
+        <input type="text" id="name" placeholder="Ekhane naam likhun..." required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Thikana:</label>
+        <input type="email" id="email" placeholder="example@domain.com" required>
+      </div>
+
+      <div class="form-group">
+        <label for="msg">Barta / Smriti (Message):</label>
+        <textarea id="msg" placeholder="90s-er kon jinish-ta aro add korle bhalo hoy..." required></textarea>
+      </div>
+
+      <button type="submit">Post Box-e Pathao ✉️</button>
+    </form>
+
+    <a href="index.html" class="back-link">← Back to Living Room</a>
+  </div>
+</body>
+</html>

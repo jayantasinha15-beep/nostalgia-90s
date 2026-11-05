@@ -1,0 +1,2921 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>90s Sunday Living Room | Ek Tukro Nostalgia</title>
+  
+  <!-- Retro Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=VT323&family=Patrick+Hand&family=Special+Elite&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --room-bg: #140b07;
+      --wood-shelf: #381c0d;
+      --tv-casing: #453427;
+      --amber-glow: #ffb703;
+      --crt-scanline: rgba(0, 0, 0, 0.35);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+ body {
+  /* Ultra-retro 1990s room background with ujjwal visual readability overlay */
+  background: 
+    linear-gradient(
+      rgba(35, 17, 8, 0.45),   /* On-screen brightness komanor light-shadow warm tone */
+      rgba(15, 6, 2, 0.72)     /* Nicher dike visual ease-er jonno ektu gradient transition */
+    ),
+    url('images/bg-room.png') no-repeat center center fixed;
+  background-size: cover;
+  
+  /* Vintage Film camera/CRT TV effects over background */
+  backdrop-filter: contrast(108%) saturate(115%);
+  -webkit-backdrop-filter: contrast(108%) saturate(115%);
+  
+  font-family: 'Patrick Hand', cursive;
+  color: #fcf8f2;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 16px 60px;
+  overflow-x: hidden;
+  position: relative;
+  transition: background 0.8s ease;
+}
+
+/* Background image mobile layout on chhotto screen-e blur na hye bose jabe */
+@media (max-width: 850px) {
+  body {
+    background: 
+      linear-gradient(
+        rgba(35, 17, 8, 0.45),
+        rgba(15, 6, 2, 0.78)
+      ),
+      url('images/bg-room.png') no-repeat 35% center fixed; /* Mobile portrait focus adjustment */
+    background-size: cover;
+  }
+}
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(circle at 80% 20%, rgba(255, 183, 3, 0.12) 0%, transparent 60%);
+      pointer-events: none;
+      z-index: 1;
+      transition: opacity 0.8s ease;
+    }
+
+    /* LOAD-SHEDDING MODE */
+    body.power-cut {
+      background: #030202 !important;
+    }
+
+    body.power-cut::before {
+      opacity: 0;
+    }
+
+    body.power-cut .crt-television,
+    body.power-cut .tv-deck-stand,
+    body.power-cut .showcase-shelf,
+    body.power-cut .gadgets-desk-section,
+    body.power-cut .scrapbook-section,
+    body.power-cut .memory-tray-section,
+    body.power-cut .interactive-row,
+    body.power-cut .id-card-generator-section,
+    body.power-cut .khata-section {
+      filter: brightness(0.18) contrast(120%);
+      pointer-events: none;
+      transition: filter 0.8s ease;
+    }
+
+    .candle-overlay {
+      position: fixed;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      background: radial-gradient(circle at 50% 50%, rgba(255, 170, 50, 0.28) 0%, rgba(255, 110, 0, 0.1) 28%, rgba(0,0,0,0.92) 65%);
+      z-index: 99;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.8s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    body.power-cut .candle-overlay {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .candle-stick {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: flicker 0.18s infinite alternate;
+    }
+
+    .flame {
+      width: 24px;
+      height: 38px;
+      background: radial-gradient(circle at 50% 80%, #ffffff 0%, #ffeb3b 35%, #ff5722 85%);
+      border-radius: 50% 50% 20% 20% / 60% 60% 40% 40%;
+      box-shadow: 0 0 25px #ff9800, 0 0 60px #ff5722;
+    }
+
+    .wax {
+      width: 32px;
+      height: 80px;
+      background: #fdfaf0;
+      border-radius: 4px 4px 10px 10px;
+      box-shadow: inset -4px 0 6px #dcd3be;
+    }
+
+    .candle-note {
+      font-family: 'Caveat', cursive;
+      font-size: 2.2rem;
+      color: #fed7aa;
+      margin-top: 18px;
+      text-shadow: 0 0 10px #ff9800;
+      text-align: center;
+    }
+
+    .restore-power-btn {
+      margin-top: 14px;
+      background: #ffb703;
+      border: 3px solid #b45309;
+      color: #000;
+      font-family: 'Caveat', cursive;
+      font-size: 1.5rem;
+      font-weight: bold;
+      padding: 8px 24px;
+      border-radius: 25px;
+      cursor: pointer;
+      box-shadow: 0 0 20px rgba(255,183,3,0.6);
+    }
+
+    @keyframes flicker {
+      0% { transform: scale(1) rotate(-1deg); opacity: 0.95; }
+      100% { transform: scale(1.05) rotate(1.5deg); opacity: 1; }
+    }
+
+    .living-room-container {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 1100px;
+    }
+
+    .room-header {
+      text-align: center;
+      margin-bottom: 25px;
+      position: relative;
+    }
+
+    .room-header h1 {
+      font-family: 'Caveat', cursive;
+      font-size: 3.8rem;
+      color: #fed7aa;
+      text-shadow: 3px 3px 0 #7c2d12, 6px 6px 20px rgba(0,0,0,0.9);
+      letter-spacing: 2px;
+      line-height: 1;
+    }
+
+    .room-header p {
+      font-size: 1.3rem;
+      color: #fdba74;
+      margin-top: 6px;
+    }
+
+    .wall-switch-container {
+      margin-top: 10px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #2b180d;
+      padding: 6px 14px;
+      border-radius: 8px;
+      border: 2px solid #5a341a;
+      box-shadow: inset 1px 1px 4px #000;
+      cursor: pointer;
+    }
+
+    .switch-lever {
+      width: 38px;
+      height: 20px;
+      background: #16a34a;
+      border-radius: 12px;
+      position: relative;
+      transition: background 0.3s;
+    }
+
+    .switch-lever::after {
+      content: "";
+      position: absolute;
+      top: 2px;
+      right: 3px;
+      width: 16px;
+      height: 16px;
+      background: #fff;
+      border-radius: 50%;
+      transition: all 0.3s;
+    }
+
+    .wall-switch-container.cut .switch-lever {
+      background: #dc2626;
+    }
+
+    .wall-switch-container.cut .switch-lever::after {
+      right: 19px;
+    }
+
+    .switch-label {
+      font-family: 'Special Elite', cursive;
+      font-size: 0.95rem;
+      color: #fed7aa;
+    }
+
+    /* AMBIENT SOUND BAR */
+    .ambient-bar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      background: rgba(43, 24, 13, 0.85);
+      border: 2px dashed #8c5225;
+      border-radius: 30px;
+      padding: 8px 18px;
+      margin: 15px auto 25px;
+      width: fit-content;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+      user-select: none;
+    }
+
+    .ambient-label {
+      font-family: 'Caveat', cursive;
+      font-size: 1.4rem;
+      color: #fed7aa;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .ambient-toggle-btn {
+      background: #1c1109;
+      color: #fed7aa;
+      border: 2px solid #5a341a;
+      border-radius: 20px;
+      padding: 5px 14px;
+      font-family: 'Special Elite', cursive;
+      font-size: 0.85rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+
+    .ambient-toggle-btn:hover {
+      border-color: #ffb703;
+      color: #fff;
+    }
+
+    .ambient-toggle-btn.active {
+      background: #ca8a04;
+      color: #000;
+      font-weight: bold;
+      border-color: #fef08a;
+      box-shadow: 0 0 10px rgba(234, 179, 8, 0.5);
+    }
+
+    .ambient-toggle-btn i {
+      font-size: 0.95rem;
+    }
+
+    /* MAIN STAGE (TV COLUMN & SIDEBAR SHELF) */
+    .living-stage {
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 25px;
+      align-items: start;
+    }
+
+    .tv-column-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      width: 100%;
+    }
+
+    .crt-television {
+      background: var(--tv-casing);
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 
+        inset 3px 3px 8px #785a44,
+        inset -4px -4px 12px #1f140d,
+        0 20px 40px rgba(0,0,0,0.9);
+      border: 6px solid #23160e;
+      display: grid;
+      grid-template-columns: 1fr 90px;
+      gap: 15px;
+    }
+
+    .tv-glass {
+      position: relative;
+      width: 100%;
+      height: 390px;
+      background: #000;
+      border-radius: 28px;
+      overflow: hidden;
+      border: 8px solid #1c1510;
+      box-shadow: inset 0 0 25px rgba(0,0,0,0.9);
+    }
+
+    .tv-glass video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: opacity 0.25s ease-in-out;
+      filter: contrast(110%) saturate(120%);
+    }
+
+    .tv-glass::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(rgba(18, 16, 16, 0) 50%, var(--crt-scanline) 50%),
+                  radial-gradient(circle, transparent 65%, rgba(0, 0, 0, 0.6) 100%);
+      background-size: 100% 4px, 100% 100%;
+      pointer-events: none;
+    }
+
+    .static-overlay {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: repeating-radial-gradient(#fff 0 0.0001%, #000 0 0.0002%);
+      background-size: 3px 3px;
+      opacity: 0;
+      pointer-events: none;
+      z-index: 4;
+      transition: opacity 0.15s;
+    }
+    .static-overlay.active {
+      opacity: 0.7;
+    }
+
+    .channel-osd {
+      position: absolute;
+      top: 18px;
+      left: 20px;
+      color: #38ef7d;
+      font-family: 'VT323', monospace;
+      font-size: 2.2rem;
+      text-shadow: 0 0 8px rgba(56, 239, 125, 0.8);
+      z-index: 5;
+    }
+
+    .channel-title-osd {
+      position: absolute;
+      bottom: 14px;
+      left: 20px;
+      right: 20px;
+      background: rgba(0,0,0,0.75);
+      padding: 6px 12px;
+      border-radius: 4px;
+      font-family: 'Caveat', cursive;
+      font-size: 1.4rem;
+      color: #fef08a;
+      z-index: 5;
+    }
+
+    .tv-knob-panel {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 0;
+    }
+
+    .knob {
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      background: #1e130c;
+      border: 3px solid #6b4d37;
+      box-shadow: inset 2px 2px 5px #000, 0 4px 6px rgba(0,0,0,0.6);
+      cursor: pointer;
+      position: relative;
+      transition: transform 0.2s;
+    }
+
+    .knob::after {
+      content: "";
+      position: absolute;
+      top: 6px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 4px;
+      height: 14px;
+      background: #ffb703;
+      border-radius: 2px;
+    }
+
+    .knob-label {
+      font-size: 0.8rem;
+      color: #fed7aa;
+      margin-top: 4px;
+      text-align: center;
+    }
+
+    .speaker-slits {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      margin-top: 15px;
+    }
+
+    .slit {
+      width: 60px;
+      height: 4px;
+      background: #180d07;
+      border-radius: 2px;
+    }
+
+    /* VCR TAPE DECK STAND (UNDER TV) */
+    .tv-deck-stand {
+      background: #25160d;
+      border: 4px solid #140a05;
+      border-radius: 10px;
+      padding: 14px 18px;
+      box-shadow: inset 0 2px 8px #000, 0 10px 25px rgba(0,0,0,0.8);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .vcr-player {
+      flex: 1;
+      background: #111417;
+      border: 2px solid #333a40;
+      border-radius: 6px;
+      padding: 10px 14px;
+      box-shadow: inset 0 0 10px #000;
+    }
+
+    .vcr-top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .vcr-brand {
+      font-family: 'Special Elite', cursive;
+      font-size: 0.85rem;
+      color: #94a3b8;
+      letter-spacing: 1px;
+    }
+
+    .vcr-display {
+      font-family: 'VT323', monospace;
+      font-size: 1.4rem;
+      color: #38ef7d;
+      background: #05160c;
+      padding: 2px 8px;
+      border-radius: 3px;
+      border: 1px solid #0d381e;
+      letter-spacing: 1px;
+    }
+
+    .vcr-slot {
+      height: 20px;
+      background: #050708;
+      border: 2px inset #222;
+      border-radius: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #555;
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+    }
+
+    .tv-remote-subpanel {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .tv-remote-label {
+      font-family: 'Caveat', cursive;
+      font-size: 1.15rem;
+      color: #fcd34d;
+      text-align: center;
+    }
+
+    .tv-remote-btn-group {
+      display: flex;
+      gap: 8px;
+    }
+
+    .remote-quick-btn {
+      background: #3b2219;
+      border: 2px solid #6b3e2e;
+      color: #fef08a;
+      border-radius: 6px;
+      padding: 6px 12px;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .remote-quick-btn:hover {
+      background: #b45309;
+      color: #fff;
+      border-color: #fde047;
+    }
+
+    /* RIGHT COLUMN: ADS & WALKMAN SHELF */
+    .showcase-shelf {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .shelf-box {
+      background: var(--wood-shelf);
+      border: 4px solid #231107;
+      border-radius: 10px;
+      padding: 16px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.7), inset 0 0 10px rgba(0,0,0,0.6);
+    }
+
+    .shelf-title {
+      font-family: 'Caveat', cursive;
+      font-size: 1.6rem;
+      color: #fef08a;
+      border-bottom: 2px dashed #9a5b28;
+      padding-bottom: 4px;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+
+    .tape-list {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 8px;
+      max-height: 380px;
+      overflow-y: auto;
+      overflow-x: hidden !important;
+      padding-right: 6px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .tape-list::-webkit-scrollbar {
+      width: 6px;
+    }
+    .tape-list::-webkit-scrollbar-track {
+      background: #231107;
+      border-radius: 4px;
+    }
+    .tape-list::-webkit-scrollbar-thumb {
+      background: #8c5225;
+      border-radius: 4px;
+    }
+    .tape-list::-webkit-scrollbar-thumb:hover {
+      background: #ca8a04;
+    }
+
+    .tape-btn {
+      background: #fdfaf0;
+      color: #2b1d14;
+      border-left: 8px solid #b91c1c;
+      padding: 8px 12px;
+      border-radius: 4px;
+      font-family: 'Special Elite', cursive;
+      font-size: 0.92rem;
+      cursor: pointer;
+      box-shadow: 2px 4px 8px rgba(0,0,0,0.4);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      box-sizing: border-box;
+      flex-shrink: 0;
+      transition: transform 0.2s, background 0.2s;
+    }
+
+    .tape-btn:nth-child(2) { border-left-color: #2563eb; }
+    .tape-btn:nth-child(3) { border-left-color: #059669; }
+    .tape-btn:nth-child(4) { border-left-color: #d97706; }
+    .tape-btn:nth-child(5) { border-left-color: #7c3aed; }
+    .tape-btn:nth-child(6) { border-left-color: #ea580c; }
+    .tape-btn:nth-child(7) { border-left-color: #0284c7; }
+    .tape-btn:nth-child(8) { border-left-color: #10b981; }
+    .tape-btn:nth-child(9) { border-left-color: #f59e0b; }
+    .tape-btn:nth-child(10) { border-left-color: #06b6d4; }
+    .tape-btn:nth-child(11) { border-left-color: #8b5cf6; }
+    .tape-btn:nth-child(12) { border-left-color: #ec4899; }
+    .tape-btn:nth-child(13) { border-left-color: #14b8a6; }
+    .tape-btn:nth-child(14) { border-left-color: #f97316; }
+
+    .tape-btn:hover {
+      transform: translateX(4px);
+      background: #fef08a;
+    }
+
+    .tape-btn.active {
+      background: #ffedd5;
+      font-weight: bold;
+      border-right: 4px solid #c2410c;
+    }
+
+    .walkman-player {
+      background: #25282a;
+      border-radius: 8px;
+      padding: 12px;
+      border: 3px solid #474d52;
+      box-shadow: inset 0 0 10px #000;
+      color: #e2e8f0;
+    }
+
+    .cassette-window {
+      background: #111417;
+      border: 2px inset #000;
+      border-radius: 4px;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .tape-label {
+      background: #fff;
+      color: #0f172a;
+      font-size: 0.8rem;
+      font-family: 'Special Elite', cursive;
+      padding: 3px;
+      text-align: center;
+      border-radius: 2px;
+      margin-bottom: 8px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .tape-reels {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .reel {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      border: 3px dashed #94a3b8;
+      animation: spin 2.5s linear infinite paused;
+    }
+
+    .reel.playing {
+      animation-play-state: running;
+    }
+
+    @keyframes spin {
+      100% { transform: rotate(360deg); }
+    }
+
+    .time-readout {
+      font-family: 'VT323', monospace;
+      color: #38bdf8;
+      font-size: 1.3rem;
+      letter-spacing: 1px;
+    }
+
+    .player-controls {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .ctrl-btn {
+      background: #3b4248;
+      border: 2px solid #555e66;
+      color: #fff;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      transition: all 0.15s;
+    }
+
+    .ctrl-btn:hover {
+      background: #eab308;
+      color: #000;
+    }
+
+    /* 90s RETRO GADGETS DESK */
+    .gadgets-desk-section {
+      margin-top: 35px;
+      background: #351e10;
+      border: 5px solid #201007;
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: inset 0 0 15px #000, 0 15px 35px rgba(0,0,0,0.85);
+      position: relative;
+    }
+
+    .desk-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border-bottom: 2px dashed #8c5225;
+      padding-bottom: 8px;
+      margin-bottom: 20px;
+    }
+
+    .desk-header h3 {
+      font-family: 'Caveat', cursive;
+      font-size: 2.3rem;
+      color: #fde047;
+    }
+
+    .desk-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 20px;
+    }
+
+    .gadget-card {
+      background: #472917;
+      border: 3px solid #6b3e1f;
+      border-radius: 8px;
+      padding: 16px;
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      position: relative;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+    }
+
+    .gadget-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.6);
+      border-color: #eab308;
+    }
+
+    .gadget-card h4 {
+      font-family: 'Caveat', cursive;
+      font-size: 1.6rem;
+      color: #fed7aa;
+      margin-bottom: 4px;
+    }
+
+    .gadget-card p {
+      font-size: 0.95rem;
+      color: #d1b99a;
+      line-height: 1.25;
+    }
+
+    .gadget-action-hint {
+      display: inline-block;
+      margin-top: 8px;
+      background: #231209;
+      color: #fde047;
+      font-size: 0.8rem;
+      padding: 3px 8px;
+      border-radius: 10px;
+      border: 1px solid #7c431b;
+    }
+
+    .gadget-thumb {
+      width: 100%;
+      max-width: 180px;
+      height: 180px;
+      object-fit: contain;
+      border-radius: 12px;
+      background: rgba(0, 0, 0, 0.25);
+      border: 2px solid #5a341a;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.7);
+      margin: 0 auto 14px;
+      display: block;
+      padding: 8px;
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), border-color 0.3s;
+    }
+
+    .gadget-card:hover .gadget-thumb {
+      transform: translateY(-8px) scale(1.08);
+      border-color: #fde047;
+      box-shadow: 0 14px 25px rgba(0, 0, 0, 0.85);
+    }
+
+    /* SCRAPBOOK ALBUM */
+    .scrapbook-section {
+      margin-top: 35px;
+      background: #fffdf5;
+      border-radius: 8px;
+      padding: 24px;
+      box-shadow: 0 18px 35px rgba(0,0,0,0.85);
+      border: 1px solid #e7ded0;
+      color: #2b1d14;
+    }
+
+    .scrapbook-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border-bottom: 2px solid #e2d9c8;
+      padding-bottom: 8px;
+      margin-bottom: 20px;
+    }
+
+    .scrapbook-header h2 {
+      font-family: 'Caveat', cursive;
+      font-size: 2.2rem;
+      color: #9a3412;
+    }
+
+    .album-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .album-item {
+      background: #ffffff;
+      padding: 10px 10px 18px;
+      box-shadow: 2px 6px 14px rgba(0,0,0,0.18);
+      border: 1px solid #f1ece1;
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .album-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 4px 12px 20px rgba(0,0,0,0.25);
+    }
+
+    .album-item img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 2px;
+    }
+
+    .album-item h4 {
+      font-family: 'Caveat', cursive;
+      font-size: 1.4rem;
+      color: #1e3a8a;
+      margin-top: 8px;
+    }
+
+    .album-item p {
+      font-size: 0.95rem;
+      color: #555;
+      line-height: 1.2;
+    }
+
+    /* KHAJNA TRAY (FLIP CARDS) */
+    .memory-tray-section {
+      margin-top: 35px;
+      background: #2e1709;
+      border: 4px solid #1a0a03;
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: inset 0 0 15px #000, 0 15px 30px rgba(0,0,0,0.8);
+    }
+
+    .tray-header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .tray-header h3 {
+      font-family: 'Caveat', cursive;
+      font-size: 2.3rem;
+      color: #fef08a;
+      letter-spacing: 1px;
+    }
+
+    .tray-header p {
+      color: #fed7aa;
+      font-size: 1.15rem;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+      perspective: 1000px;
+    }
+
+    .flip-card {
+      background-color: transparent;
+      height: 240px;
+      cursor: pointer;
+    }
+
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+      transform-style: preserve-3d;
+    }
+
+    .flip-card.flipped .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-front, .flip-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      border-radius: 8px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.5);
+    }
+
+    .flip-front {
+      background: #fdfbf7;
+      color: #3b1b0b;
+      border: 3px solid #d4a373;
+      padding: 12px 8px;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+
+    .khajna-thumb {
+      width: 100%;
+      max-width: 150px;
+      height: 115px;
+      object-fit: contain;
+      margin: 0 0 6px 0;
+      filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.35));
+      transition: transform 0.3s ease;
+    }
+
+    .flip-card:hover .khajna-thumb {
+      transform: scale(1.06);
+    }
+
+    .flip-front h4 {
+      font-family: 'Caveat', cursive;
+      font-size: 1.45rem;
+      color: #7c2d12;
+      margin: 2px 0 0 0;
+      line-height: 1.1;
+      text-align: center;
+    }
+
+    .flip-front span {
+      font-size: 0.8rem;
+      color: #888;
+      margin-top: 4px;
+      line-height: 1;
+    }
+
+    .flip-back {
+      background: #fff8eb;
+      color: #291507;
+      transform: rotateY(180deg);
+      border: 3px dashed #b45309;
+      font-size: 1.05rem;
+      line-height: 1.35;
+    }
+
+    .flip-back b {
+      color: #b91c1c;
+      font-size: 1.15rem;
+      margin-bottom: 6px;
+      font-family: 'Caveat', cursive;
+    }
+
+    /* 90s ID CARD GENERATOR */
+    .id-card-generator-section {
+      max-width: 650px;
+      margin: 40px auto;
+      background: #fdfbf7;
+      border: 4px solid #b45309;
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7);
+      color: #2b1d14;
+    }
+
+    .id-card-generator-section h3 {
+      font-family: 'Caveat', cursive;
+      font-size: 2.2rem;
+      color: #7c2d12;
+      text-align: center;
+      margin: 0 0 6px 0;
+      border-bottom: 2px dashed #d4a373;
+      padding-bottom: 8px;
+    }
+
+    .id-card-generator-section p {
+      text-align: center;
+      font-size: 1.05rem;
+      color: #5a341a;
+      margin-bottom: 18px;
+    }
+
+    .id-form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .id-input-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .id-input-group label {
+      font-size: 0.95rem;
+      color: #7c2d12;
+      margin-bottom: 4px;
+      font-weight: bold;
+    }
+
+    .id-input-group input, 
+    .id-input-group select {
+      padding: 8px 10px;
+      border: 2px solid #d4a373;
+      border-radius: 6px;
+      background: #fff;
+      font-family: 'Patrick Hand', cursive;
+      font-size: 1.05rem;
+      color: #2b1d14;
+    }
+
+    .id-preview-box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 18px 0;
+    }
+
+    #idCanvas {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      border: 2px solid #78350f;
+    }
+
+    .id-btn-group {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .id-action-btn {
+      background: #b45309;
+      color: #fff;
+      border: none;
+      padding: 8px 20px;
+      border-radius: 20px;
+      font-family: 'Caveat', cursive;
+      font-size: 1.3rem;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .id-action-btn:hover {
+      background: #7c2d12;
+      transform: translateY(-2px);
+    }
+
+    .id-action-btn.download-btn {
+      background: #15803d;
+    }
+
+    .id-action-btn.download-btn:hover {
+      background: #166534;
+    }
+
+    /* TRIVIA & DIARY */
+    .interactive-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+      margin-top: 35px;
+    }
+
+    .quiz-card {
+      background: #fefce8;
+      border: 3px solid #ca8a04;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+      color: #713f12;
+    }
+
+    .quiz-card h3 {
+      font-family: 'Caveat', cursive;
+      font-size: 2rem;
+      color: #854d0e;
+      border-bottom: 2px dashed #eab308;
+      padding-bottom: 6px;
+      margin-bottom: 14px;
+    }
+
+    .quiz-question {
+      font-size: 1.3rem;
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+
+    .quiz-options {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .option-btn {
+      background: #fff;
+      border: 2px solid #ca8a04;
+      padding: 8px 12px;
+      font-family: 'Patrick Hand', cursive;
+      font-size: 1.15rem;
+      border-radius: 4px;
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.2s;
+    }
+
+    .option-btn:hover {
+      background: #fde047;
+    }
+
+    .quiz-result {
+      margin-top: 12px;
+      font-size: 1.25rem;
+      font-weight: bold;
+      min-height: 28px;
+    }
+
+    .guestbook-card {
+      background: #fff8f0;
+      border: 2px dashed #9a3412;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+      color: #3b2219;
+    }
+
+    .guestbook-card h3 {
+      font-family: 'Caveat', cursive;
+      font-size: 2rem;
+      color: #9a3412;
+      border-bottom: 2px dashed #ea580c;
+      padding-bottom: 6px;
+      margin-bottom: 12px;
+    }
+
+    .diary-form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .diary-input, .diary-textarea {
+      font-family: 'Patrick Hand', cursive;
+      font-size: 1.1rem;
+      padding: 8px 10px;
+      border: 1px solid #d4b59d;
+      border-radius: 4px;
+      background: #fffdf9;
+    }
+
+    .diary-textarea {
+      resize: vertical;
+      height: 60px;
+    }
+
+    .diary-submit {
+      background: #ea580c;
+      color: #fff;
+      border: none;
+      padding: 8px 16px;
+      font-family: 'Caveat', cursive;
+      font-size: 1.3rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .diary-submit:hover {
+      background: #c2410c;
+    }
+
+    .diary-entries {
+      max-height: 170px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      border-top: 1px dotted #ccc;
+      padding-top: 10px;
+    }
+
+    .diary-entry {
+      background: #fff;
+      padding: 8px 10px;
+      border-radius: 4px;
+      border-left: 4px solid #ea580c;
+      font-size: 1rem;
+    }
+
+    .diary-entry strong {
+      color: #9a3412;
+    }
+
+    /* KHATAR KHOSHRA (TIC-TAC-TOE) */
+    .khata-section {
+      margin-top: 35px;
+      background: #fdfbf7;
+      border-radius: 6px;
+      box-shadow: 
+        -4px 0 0 #b91c1c,
+        0 12px 28px rgba(0,0,0,0.7);
+      padding: 24px 28px;
+      border: 1px solid #e5dccc;
+      position: relative;
+      overflow: hidden;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .khata-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        transparent,
+        transparent 27px,
+        #bfdbfe 28px
+      );
+      pointer-events: none;
+      opacity: 0.65;
+    }
+
+    .khata-header {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      border-bottom: 2px dashed #93c5fd;
+      padding-bottom: 8px;
+      margin-bottom: 18px;
+    }
+
+    .khata-header h3 {
+      font-family: 'Caveat', cursive;
+      font-size: 2.2rem;
+      color: #1e3a8a;
+      margin: 0;
+    }
+
+    .khata-header p {
+      font-size: 1.05rem;
+      color: #4b5563;
+      margin: 4px 0 0;
+    }
+
+    .tictac-board {
+      position: relative;
+      z-index: 2;
+      width: 250px;
+      height: 250px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+    }
+
+    .tictac-cell {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Caveat', cursive;
+      font-size: 3.2rem;
+      font-weight: bold;
+      cursor: pointer;
+      user-select: none;
+      border: 3px solid #1e293b;
+      transition: background 0.15s ease;
+    }
+
+    .tictac-cell:nth-child(1), .tictac-cell:nth-child(2), .tictac-cell:nth-child(3) { border-top: none; }
+    .tictac-cell:nth-child(7), .tictac-cell:nth-child(8), .tictac-cell:nth-child(9) { border-bottom: none; }
+    .tictac-cell:nth-child(1), .tictac-cell:nth-child(4), .tictac-cell:nth-child(7) { border-left: none; }
+    .tictac-cell:nth-child(3), .tictac-cell:nth-child(6), .tictac-cell:nth-child(9) { border-right: none; }
+
+    .tictac-cell.x-mark {
+      color: #1d4ed8;
+      text-shadow: 1px 1px 0 rgba(29, 78, 216, 0.4);
+    }
+
+    .tictac-cell.o-mark {
+      color: #dc2626;
+      text-shadow: 1px 1px 0 rgba(220, 38, 38, 0.4);
+    }
+
+    .khata-status {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      margin-top: 16px;
+      font-family: 'Caveat', cursive;
+      font-size: 1.5rem;
+      color: #0f172a;
+      min-height: 32px;
+    }
+
+    .khata-reset-btn {
+      position: relative;
+      z-index: 2;
+      display: block;
+      margin: 12px auto 0;
+      background: #fef08a;
+      border: 2px dashed #ca8a04;
+      border-radius: 20px;
+      padding: 6px 18px;
+      font-family: 'Patrick Hand', cursive;
+      font-size: 1.1rem;
+      color: #713f12;
+      cursor: pointer;
+      box-shadow: 1px 3px 6px rgba(0,0,0,0.15);
+      transition: all 0.2s ease;
+    }
+
+    .khata-reset-btn:hover {
+      background: #fde047;
+      transform: translateY(-2px);
+    }
+
+    /* MODAL */
+    .modal-overlay {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.85);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 100;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s;
+      padding: 16px;
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .polaroid-modal {
+      background: #fff;
+      padding: 16px 16px 28px;
+      border-radius: 4px;
+      max-width: 440px;
+      width: 100%;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.9);
+      text-align: center;
+      color: #2b1d14;
+      transform: scale(0.9);
+      transition: transform 0.25s;
+    }
+
+    .modal-overlay.active .polaroid-modal {
+      transform: scale(1);
+    }
+
+    .polaroid-modal img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      border: 1px solid #ddd;
+    }
+
+    .polaroid-modal h3 {
+      font-family: 'Caveat', cursive;
+      font-size: 2rem;
+      color: #9a3412;
+      margin-top: 12px;
+    }
+
+    .polaroid-modal p {
+      font-size: 1.15rem;
+      color: #555;
+      margin-top: 6px;
+    }
+
+    .close-modal-btn {
+      margin-top: 14px;
+      background: #fde047;
+      border: 2px dashed #ca8a04;
+      padding: 6px 18px;
+      font-family: 'Caveat', cursive;
+      font-size: 1.25rem;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    /* ========================================================
+   MOBILE & TABLET RESPONSIVE TWEAKS (PERFECT FIT)
+   ======================================================== */
+@media (max-width: 850px) {
+  body {
+    padding: 16px 10px 40px;
+  }
+
+  .room-header h1 {
+    font-size: 2.3rem;
+  }
+
+  .room-header p {
+    font-size: 1.05rem;
+  }
+
+  /* 2-Column theke single column stack */
+  .living-stage {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  /* CRT TV mobile scaling */
+  .crt-television {
+    grid-template-columns: 1fr;
+    padding: 14px;
+    gap: 12px;
+  }
+
+  .tv-glass {
+    height: 240px; /* Mobile screen-e compact height */
+    border-width: 5px;
+  }
+
+  .channel-osd {
+    font-size: 1.5rem;
+    top: 10px;
+    left: 12px;
+  }
+
+  .channel-title-osd {
+    font-size: 1.1rem;
+    bottom: 8px;
+    left: 10px;
+    right: 10px;
+    padding: 4px 8px;
+  }
+
+  /* Knobs horizontal layout for mobile */
+  .tv-knob-panel {
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 8px 0;
+  }
+
+  .knob {
+    width: 46px;
+    height: 46px;
+  }
+
+  .speaker-slits {
+    display: none; /* Mobile-e clean rakhar jonno */
+  }
+
+  /* VCR Deck Mobile layout */
+  .tv-deck-stand {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .tv-remote-btn-group {
+    justify-content: center;
+  }
+
+  /* Ads Playlist & Walkman */
+  .tape-list {
+    max-height: 280px;
+  }
+
+  .tape-btn {
+    font-size: 0.85rem;
+    padding: 7px 10px;
+  }
+
+  /* Interactive grid cards */
+  .interactive-row {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .id-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tictac-board {
+    width: 220px;
+    height: 220px;
+  }
+
+  .tictac-cell {
+    font-size: 2.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .ambient-bar {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 6px 12px;
+  }
+
+  .ambient-label {
+    font-size: 1.15rem;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 4px;
+  }
+
+  .id-card-generator-section {
+    padding: 16px 12px;
+  }
+
+  #idCanvas {
+    width: 100% !important;
+    height: auto !important;
+  }
+}
+  </style>
+</head>
+<body>
+
+  <!-- CANDLE & LOAD-SHEDDING OVERLAY -->
+  <div class="candle-overlay" id="candleOverlay">
+    <div class="candle-stick">
+      <div class="flame"></div>
+      <div class="wax"></div>
+    </div>
+    <div class="candle-note">🕯 "Dada, Load-shedding hoye geche! Mombaati jalao..."</div>
+    <button class="restore-power-btn" onclick="togglePowerCut()">⚡ Current Eshe Geche! (Power On)</button>
+  </div>
+
+  <div class="living-room-container">
+
+    <header class="room-header">
+      <h1>★ Golden 90s: Offline Childhood ★</h1>
+      <p>Kono internet chilona, kintu shobkichu chilo poripurno.</p>
+      
+      <!-- Vintage Switch for Power Cut -->
+      <div class="wall-switch-container" id="powerSwitch" onclick="togglePowerCut()" title="Click to trigger 90s Load-shedding">
+        <span class="switch-label">POWER</span>
+        <div class="switch-lever"></div>
+      </div>
+
+      <!-- AMBIENT SOUNDSCAPE TOGGLE BAR -->
+      <div class="ambient-bar">
+        <span class="ambient-label">🍃 Living Room Atmosphere:</span>
+        <button class="ambient-toggle-btn" id="btn-fan" onclick="toggleFanHum()">
+          <i class="fa-solid fa-fan"></i> Table Fan
+        </button>
+        <button class="ambient-toggle-btn" id="btn-rain" onclick="toggleRainSound()">
+          <i class="fa-solid fa-cloud-rain"></i> Janalar Brishti
+        </button>
+      </div>
+    </header>
+
+    <!-- MAIN LIVING STAGE (CLEAN 2-COLUMN GRID) -->
+    <div class="living-stage">
+      
+      <!-- LEFT COLUMN: TV + UNDER-TV VCR DECK -->
+      <div class="tv-column-wrap">
+        
+        <!-- CRT Television -->
+        <div class="crt-television">
+          <div class="tv-glass" id="tv-screen">
+            <audio id="tv-channel-audio" preload="auto" loop></audio>
+            <div class="static-overlay" id="static-screen"></div>
+            <div class="channel-osd" id="osd-channel">AD 01: CADBURY</div>
+            
+            <video id="main-display-video" loop playsinline preload="metadata">
+              <source src="videos/cadbury.mp4" type="video/mp4">
+            </video>
+            
+            <div class="channel-title-osd" id="osd-desc">
+              🍫 Cricket stadium-e nachar sei memorable Shimona Rashi dance!
+            </div>
+          </div>
+
+          <!-- TV Knobs & Slits -->
+          <div class="tv-knob-panel">
+            <div>
+              <div class="knob" id="channel-knob" onclick="nextChannel()" title="Click to rotate knob & change channel"></div>
+              <div class="knob-label">AD SELECT</div>
+            </div>
+
+            <div>
+              <div class="knob" id="tuner-knob" onclick="toggleNoise()" title="Volume / Antenna Tuning"></div>
+              <div class="knob-label">TUNER / NOISE</div>
+            </div>
+
+            <div class="speaker-slits">
+              <div class="slit"></div>
+              <div class="slit"></div>
+              <div class="slit"></div>
+              <div class="slit"></div>
+              <div class="slit"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- VCR DECK STAND (UNDER TV) -->
+        <div class="tv-deck-stand">
+          <div class="vcr-player">
+            <div class="vcr-top-row">
+              <span class="vcr-brand">📼 NATIONAL VCR HQ</span>
+              <div class="vcr-display" id="vcrTime">SP 00:19:98</div>
+            </div>
+            <div class="vcr-slot">
+              <span>◄ AUTO TRACKING / VHS HI-FI ►</span>
+            </div>
+          </div>
+
+          <div class="tv-remote-subpanel">
+            <div class="tv-remote-label">🎛️ TV Quick Control</div>
+            <div class="tv-remote-btn-group">
+              <button class="remote-quick-btn" onclick="nextChannel()" title="Next Ad">
+                <i class="fa-solid fa-forward-step"></i> Next Ad
+              </button>
+              <button class="remote-quick-btn" onclick="toggleMuteVideo()" id="btnMute" title="Mute/Unmute">
+                <i class="fa-solid fa-volume-high"></i> Sound
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT COLUMN: 90s ADS LIST & SONY WALKMAN -->
+      <div class="showcase-shelf">
+        
+        <!-- 90s DOORDARSHAN ADS -->
+        <div class="shelf-box">
+          <div class="shelf-title">📺 90s DOORDARSHAN ADS</div>
+          <div class="tape-list">
+            <div class="tape-btn active" onclick="switchChannel(0)">
+              <span>1. Cadbury Asli Swaad</span>
+              <i class="fa-solid fa-heart"></i>
+            </div>
+            <div class="tape-btn" onclick="switchChannel(1)">
+              <span>2. Hamara Bajaj Chetak</span>
+              <i class="fa-solid fa-motorcycle"></i>
+            </div>
+            <div class="tape-btn" onclick="switchChannel(2)">
+              <span>3. Dhara Jalebi (Bablu)</span>
+              <i class="fa-solid fa-utensils"></i>
+            </div>
+            <div class="tape-btn" onclick="switchChannel(3)">
+              <span>4. Vicco Turmeric Cream</span>
+              <i class="fa-solid fa-spa"></i>
+            </div>
+            <div class="tape-btn" onclick="switchChannel(4)">
+              <span>5. Fevikwik Machhli Ad</span>
+              <i class="fa-solid fa-fish"></i>
+            </div>
+            <div class="tape-btn" onclick="switchChannel(5)">
+              <span>6. Washing Powder Nirma</span>
+              <i class="fa-solid fa-soap"></i>
+            </div>
+            <div class="tape-btn" onclick="switchChannel(6)">
+              <span>7. Pan Parag Baraati</span>
+              <i class="fa-solid fa-users"></i>
+            </div>
+            <div class="tape-btn" onclick="switchChannel(7)">
+              <span>8. Action Shoes School Time</span>
+              <i class="fa-solid fa-shoe-prints"></i>
+            </div>
+            <div class="tape-btn" onclick="switchChannel(8)">
+              <span>9. I Love You Rasna</span>
+              <i class="fa-solid fa-glass-water"></i>
+            </div>
+            <div class="tape-btn" onclick="switchChannel(9)">
+              <span>10. Complan Boy & Girl</span>
+              <i class="fa-solid fa-child"></i>
+            </div>
+            <div class="tape-btn" onclick="switchChannel(10)">
+              <span>11. Liril Lime Waterfall</span>
+              <i class="fa-solid fa-water"></i>
+            </div>
+            <div class="tape-btn" onclick="switchChannel(11)">
+              <span>12. Parle-G G Maane Genius</span>
+              <i class="fa-solid fa-brain"></i>
+            </div>
+            <div class="tape-btn" onclick="switchChannel(12)">
+              <span>13. Amul The Taste of India</span>
+              <i class="fa-solid fa-cow"></i>
+            </div>
+            <div class="tape-btn" onclick="switchChannel(13)">
+              <span>14. Nataraj Phir Se Chamka</span>
+              <i class="fa-solid fa-pencil"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- SONY WALKMAN -->
+        <div class="shelf-box">
+          <div class="shelf-title">📻 SONY WALKMAN</div>
+          <div class="walkman-player">
+            <audio id="walkman-audio" preload="auto"></audio>
+
+            <div class="cassette-window">
+              <div class="tape-label" id="tape-name">TRACK 1: 90s Chill Memories</div>
+              <div class="tape-reels">
+                <div class="reel" id="reel-1"></div>
+                <div class="time-readout" id="walkman-time">00:00 / 00:00</div>
+                <div class="reel" id="reel-2"></div>
+              </div>
+            </div>
+            <div class="player-controls">
+              <button class="ctrl-btn" onclick="prevTrack()" title="Previous Track"><i class="fa-solid fa-backward-step"></i></button>
+              <button class="ctrl-btn" onclick="seekAudio(-10)" title="Rewind 10s"><i class="fa-solid fa-backward"></i></button>
+              <button class="ctrl-btn" id="play-pause-btn" onclick="toggleAudio()" title="Play/Pause"><i class="fa-solid fa-play"></i></button>
+              <button class="ctrl-btn" onclick="seekAudio(10)" title="Forward 10s"><i class="fa-solid fa-forward"></i></button>
+              <button class="ctrl-btn" onclick="nextTrack()" title="Next Track"><i class="fa-solid fa-forward-step"></i></button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- 90s RETRO GADGETS DESK / SHELF -->
+    <section class="gadgets-desk-section">
+      <div class="desk-header">
+        <h3>🕹️ Living Room Desk & Purono Gadgets</h3>
+        <span style="color:#fcd34d; font-size:1.1rem;">(Gadget-e click kore dekho nostalgia!)</span>
+      </div>
+
+      <div class="desk-grid">
+        <div class="gadget-card" onclick="triggerBrickBeep()">
+          <img class="gadget-thumb" src="images/brickgame.png" alt="Brick Game">
+          <h4>Brick Game (9999 in 1)</h4>
+          <p>Tetris, Formula Race ar Tank game-er king! Ektei 2 ta AA battery-te sharakhon cholto.</p>
+          <span class="gadget-action-hint">🔊 Click to Hear Beep!</span>
+        </div>
+
+        <div class="gadget-card" onclick="triggerWaterRing()">
+          <img class="gadget-thumb" id="waterRingIcon" src="images/water-ring.png" alt="Water Ring Game">
+          <h4>Water Ring Toss Game</h4>
+          <p>Halka rubber button press kore joler moddhe duti stick-e ring gulo poranor endless chesta!</p>
+          <span class="gadget-action-hint">🫧 Click to Pump Ring!</span>
+        </div>
+
+        <div class="gadget-card" onclick="triggerMiltonClick()">
+          <img class="gadget-thumb" src="images/milton-bottle.png" alt="Milton Bottle">
+          <h4>Milton School Bottle</h4>
+          <p>Golay belt jhuliye school jawar shongi. Bhetore thanda jol ar baji dhore jol khawa!</p>
+          <span class="gadget-action-hint">🎒 Summer School Days</span>
+        </div>
+
+        <div class="gadget-card" onclick="triggerHeadphoneClick()">
+          <img class="gadget-thumb" src="images/headphone.png" alt="Orange Headphones">
+          <h4>Orange Foam Headphones</h4>
+          <p>Metal wire band ar orange foam earpad. Walkman-er sathe kaane lagiye chader opor gaan shona.</p>
+          <span class="gadget-action-hint">🎧 Tape Cassette Sound</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scrapbook Photo Album Grid -->
+    <section class="scrapbook-section">
+      <div class="scrapbook-header">
+        <h2>Chhotobelar Photo Album</h2>
+        <span style="font-size: 1.1rem; color:#888;">(Click any picture to enlarge)</span>
+      </div>
+
+      <div class="album-grid">
+        <div class="album-item" onclick="openModal('images/videogames.png', 'Video Game Parlour', '1 takay 1 ta coin ar Street Fighter ba Mario-r uttejna!')">
+          <img src="images/videogames.png" alt="Video Games">
+          <h4>Video Game Parlour</h4>
+          <p>1 takay 1 ta coin ar Mario-r uttejna!</p>
+        </div>
+
+        <div class="album-item" onclick="openModal('images/cassette.png', 'Cassette Tape Collection', 'Kumar Sanu ar Lucky Ali-r gaan baje Walkman-e.')">
+          <img src="images/cassette.png" alt="Cassettes">
+          <h4>Cassette Tape Collection</h4>
+          <p>Kumar Sanu ar Lucky Ali-r gaan baje Walkman-e.</p>
+        </div>
+
+        <div class="album-item" onclick="openModal('images/cartoons.jpg', 'Cartoon Network Mornings', 'Dexter, Swat Kats ar Tom & Jerry-r shundor bikel gulo.')">
+          <img src="images/cartoons.jpg" alt="Cartoons">
+          <h4>Cartoon Network Mornings</h4>
+          <p>Dexter, Swat Kats ar Tom & Jerry-r bikel.</p>
+        </div>
+
+        <div class="album-item" onclick="openModal('images/cricket.png', 'Bikel 4 Ter Gully Cricket', 'Ball harale khuje anar shoto shorot!')">
+          <img src="images/cricket.png" alt="Cricket">
+          <h4>Bikel 4 Ter Gully Cricket</h4>
+          <p>Ball harale khuje anar shoto shorot!</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 90s Khajna Tray (Flip Cards) -->
+    <section class="memory-tray-section">
+      <div class="tray-header">
+        <h3>🧰 90s Khajna Tray</h3>
+        <p>Card gulate click kore dekho chhotobelar gopon memory!</p>
+      </div>
+
+      <div class="cards-grid">
+        <div class="flip-card" onclick="flipCard(this)">
+          <div class="flip-card-inner">
+            <div class="flip-front">
+              <img class="khajna-thumb" src="images/phantom-cigarettes.png" onerror="this.onerror=null; this.src='images/phantom-cigarettes.png';" alt="Phantom Cigarettes">
+              <h4>Phantom Cigarettes</h4>
+              <span>(Click to Reveal)</span>
+            </div>
+            <div class="flip-back">
+              <b>Phantom Sweet Candy</b>
+              Mukhe diye dhoya chharar acting kora sei misti pudinar candy! Shob bondhur hero sajar secret weapon.
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card" onclick="flipCard(this)">
+          <div class="flip-card-inner">
+            <div class="flip-front">
+              <img class="khajna-thumb" src="images/wwe-cards.png" onerror="this.onerror=null; this.src='images/wwe-cards.png';" alt="WWE Cards">
+              <h4>WWE Trump Cards</h4>
+              <span>(Click to Reveal)</span>
+            </div>
+            <div class="flip-back">
+              <b>Undertaker Rank 1!</b>
+              "Height: 6'10, Weight: 320 lbs! Undertaker diye shob card kete newa!" Tiffin time-er ultimate ladai.
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card" onclick="flipCard(this)">
+          <div class="flip-card-inner">
+            <div class="flip-front">
+              <img class="khajna-thumb" src="images/nataraj-pencil.png" onerror="this.onerror=null; this.src='images/nataraj-pencil.png';" alt="Nataraj Pencil">
+              <h4>Nataraj Pencil Trick</h4>
+              <span>(Click to Reveal)</span>
+            </div>
+            <div class="flip-back">
+              <b>Pencil & Tape Rewind</b>
+              Walkman-er battery bachate pen ba pencil cassette-er chidre dhukiye haat diye ghurie gaan rewind kora!
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card" onclick="flipCard(this)">
+          <div class="flip-card-inner">
+            <div class="flip-front">
+              <img class="khajna-thumb" src="images/big-babol.png" onerror="this.onerror=null; this.src='images/big-babol.png';" alt="Big Babol">
+              <h4>Big Babol & Boomer</h4>
+              <span>(Click to Reveal)</span>
+            </div>
+            <div class="flip-back">
+              <b>Boro Boro Bubble!</b>
+              "Boomer Boom Boom Bubble Gum!" Bhetore free tattoo thakto ar haater opor jol diye chepe lagano hoto!
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Trivia Quiz & Memory Diary -->
+    <div class="interactive-row">
+      <div class="quiz-card">
+        <h3>⚡ 90s Nostalgia Quiz</h3>
+        <div class="quiz-question" id="quiz-q">Loading question...</div>
+        <div class="quiz-options" id="quiz-opts"></div>
+        <div class="quiz-result" id="quiz-res"></div>
+      </div>
+
+      <div class="guestbook-card">
+        <h3>📖 Nostalgia Memory Diary</h3>
+        <form class="diary-form" id="diary-form" onsubmit="saveMemory(event)">
+          <input type="text" id="author" class="diary-input" placeholder="Tomar Naam..." required>
+          <textarea id="message" class="diary-textarea" placeholder="90s-er kon jinish-ta shobcheye beshi miss koro?" required></textarea>
+          <button type="submit" class="diary-submit">Post Your Memory ✍</button>
+        </form>
+        <div class="diary-entries" id="diary-entries"></div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer style="text-align: center; margin-top: 50px; font-family: 'Special Elite', cursive; font-size: 1rem; color: #fed7aa;">
+      <p>© 1998–2026 90s Nostalgia Machine. Made with ❤️ for 90s Kids.</p>
+      <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 8px;">
+        <a href="about.html" style="color: #fcd34d; text-decoration: underline;">About</a>
+        <a href="contact.html" style="color: #fcd34d; text-decoration: underline;">Contact</a>
+        <a href="privacy-policy.html" style="color: #fcd34d; text-decoration: underline;">Privacy Policy</a>
+        <a href="disclaimer.html" style="color: #fcd34d; text-decoration: underline;">Disclaimer</a>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Modal Lightbox for Album Photos -->
+  <div class="modal-overlay" id="photo-modal" onclick="closeModal()">
+    <div class="polaroid-modal" onclick="event.stopPropagation()">
+      <img id="modal-img" src="" alt="Enlarged Memory">
+      <h3 id="modal-title"></h3>
+      <p id="modal-desc"></p>
+      <button class="close-modal-btn" onclick="closeModal()">Close Memory ✕</button>
+    </div>
+  </div>
+
+  <script>
+    function toggleMuteVideo() {
+      playKnobClick();
+      const vid = document.getElementById('main-display-video');
+      const btn = document.getElementById('btnMute');
+      if (!vid) return;
+
+      vid.muted = !vid.muted;
+      if (vid.muted) {
+        btn.innerHTML = '<i class="fa-solid fa-volume-xmark"></i> Mute';
+      } else {
+        btn.innerHTML = '<i class="fa-solid fa-volume-high"></i> Sound';
+      }
+    }
+
+    /* ========================================================
+       90s KID ID CARD PHOTO UPLOAD & DRAW ENGINE
+       ======================================================== */
+    var uploadedUserImage = null;
+
+    function handlePhotoUpload(event) {
+      var file = event.target.files && event.target.files[0];
+      if (!file) return;
+
+      var img = new Image();
+      img.onload = function() {
+        uploadedUserImage = img;
+        draw90sIDCard();
+      };
+      img.src = URL.createObjectURL(file);
+    }
+
+    function draw90sIDCard() {
+      var canvas = document.getElementById('idCanvas');
+      if (!canvas) return;
+      var ctx = canvas.getContext('2d');
+
+      var nameInput = document.getElementById('idName');
+      var batchInput = document.getElementById('idBatch');
+      var cartoonInput = document.getElementById('idCartoon');
+      var snackInput = document.getElementById('idSnack');
+
+      var name = (nameInput && nameInput.value.trim()) ? nameInput.value.trim() : 'GULLY BOY';
+      var batch = batchInput ? batchInput.value : 'CLASS OF 1998';
+      var cartoon = cartoonInput ? cartoonInput.value : 'Shaktimaan & Captain Vyom';
+      var snack = snackInput ? snackInput.value : 'Phantom Cigarettes';
+
+      // 1. Clear & Background
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = '#fefcf8';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      // Vintage Grid
+      ctx.strokeStyle = '#f0ebe1';
+      ctx.lineWidth = 1;
+      for (var x = 0; x < canvas.width; x += 20) {
+        ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, canvas.height); ctx.stroke();
+      }
+      for (var y = 0; y < canvas.height; y += 20) {
+        ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(canvas.width, y); ctx.stroke();
+      }
+
+      // 2. Borders
+      ctx.strokeStyle = '#1e3a8a';
+      ctx.lineWidth = 6;
+      ctx.strokeRect(8, 8, canvas.width - 16, canvas.height - 16);
+
+      ctx.strokeStyle = '#b45309';
+      ctx.lineWidth = 2;
+      ctx.strokeRect(14, 14, canvas.width - 28, canvas.height - 28);
+
+      // 3. Header Banner
+      ctx.fillStyle = '#1e3a8a';
+      ctx.fillRect(16, 16, canvas.width - 32, 54);
+
+      ctx.fillStyle = '#ffffff';
+      ctx.font = 'bold 20px "Courier New", monospace';
+      ctx.textAlign = 'center';
+      ctx.fillText('CERTIFIED 90s KID ASSOCIATION', canvas.width / 2, 42);
+
+      ctx.fillStyle = '#fde047';
+      ctx.font = 'bold 11px "Courier New", monospace';
+      ctx.fillText('OFFICIAL SUNDAY EVENING BOARD • GOVT. OF NOSTALGIA', canvas.width / 2, 58);
+
+      // 4. Photo Frame Coordinates
+      var photoX = 35;
+      var photoY = 88;
+      var photoW = 110;
+      var photoH = 132;
+
+      if (uploadedUserImage) {
+        ctx.save();
+        ctx.beginPath();
+        ctx.rect(photoX, photoY, photoW, photoH);
+        ctx.clip();
+
+        var imgRatio = uploadedUserImage.width / uploadedUserImage.height;
+        var frameRatio = photoW / photoH;
+        var rW, rH, rX, rY;
+
+        if (imgRatio > frameRatio) {
+          rH = photoH;
+          rW = photoH * imgRatio;
+          rX = photoX - (rW - photoW) / 2;
+          rY = photoY;
+        } else {
+          rW = photoW;
+          rH = photoW / imgRatio;
+          rX = photoX;
+          rY = photoY - (rH - photoH) / 2;
+        }
+
+        ctx.drawImage(uploadedUserImage, rX, rY, rW, rH);
+        ctx.restore();
+      } else {
+        ctx.fillStyle = '#ede9fe';
+        ctx.fillRect(photoX, photoY, photoW, photoH);
+
+        ctx.fillStyle = '#94a3b8';
+        ctx.beginPath();
+        ctx.arc(photoX + photoW / 2, photoY + 45, 26, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.beginPath();
+        ctx.arc(photoX + photoW / 2, photoY + 115, 42, Math.PI, 0, false);
+        ctx.fill();
+
+        ctx.fillStyle = '#0f172a';
+        ctx.font = 'bold 10px monospace';
+        ctx.textAlign = 'center';
+        ctx.fillText('UPLOAD PHOTO', photoX + photoW / 2, photoY + 120);
+      }
+
+      ctx.strokeStyle = '#475569';
+      ctx.lineWidth = 2;
+      ctx.strokeRect(photoX, photoY, photoW, photoH);
+
+      // 5. Card Text Information
+      ctx.textAlign = 'left';
+      
+      ctx.fillStyle = '#7c2d12';
+      ctx.font = 'bold 12px monospace';
+      ctx.fillText('NAME / SHILPI:', 165, 105);
+      ctx.fillStyle = '#0f172a';
+      ctx.font = 'bold 18px "Courier New", monospace';
+      ctx.fillText(name.toUpperCase(), 165, 126);
+
+      ctx.fillStyle = '#7c2d12';
+      ctx.font = 'bold 12px monospace';
+      ctx.fillText('CLASS / BATCH:', 165, 148);
+      ctx.fillStyle = '#1e3a8a';
+      ctx.font = 'bold 14px "Courier New", monospace';
+      ctx.fillText(batch.toUpperCase(), 165, 166);
+
+      ctx.fillStyle = '#7c2d12';
+      ctx.font = 'bold 12px monospace';
+      ctx.fillText('SUNDAY OBSESSION:', 165, 188);
+      ctx.fillStyle = '#047857';
+      ctx.font = 'bold 13px "Courier New", monospace';
+      ctx.fillText(cartoon, 165, 204);
+
+      ctx.fillStyle = '#7c2d12';
+      ctx.font = 'bold 12px monospace';
+      ctx.fillText('SIGNATURE WEAPON:', 165, 226);
+      ctx.fillStyle = '#b45309';
+      ctx.font = 'bold 13px "Courier New", monospace';
+      ctx.fillText(snack, 165, 242);
+
+      // 6. Vintage Stamp
+      ctx.save();
+      ctx.translate(435, 235);
+      ctx.rotate(-0.12);
+      ctx.strokeStyle = '#dc2626';
+      ctx.lineWidth = 3;
+      ctx.strokeRect(-55, -20, 110, 40);
+      ctx.fillStyle = '#dc2626';
+      ctx.font = 'bold 15px monospace';
+      ctx.textAlign = 'center';
+      ctx.fillText('OFFICIAL', 0, -2);
+      ctx.font = 'bold 11px monospace';
+      ctx.fillText('100% RETRO', 0, 13);
+      ctx.restore();
+
+      // 7. Barcode & Footer
+      ctx.fillStyle = '#1e293b';
+      ctx.font = '10px monospace';
+      ctx.textAlign = 'left';
+      ctx.fillText('ID NO: 90S-IND-1998-DD1', 35, 285);
+      ctx.fillText('||| ||||| || |||| |||| |||||| ||||| ||', 35, 298);
+
+      ctx.textAlign = 'right';
+      ctx.fillText('VALIDITY: FOREVER (NO INTERNET ERA)', canvas.width - 35, 295);
+    }
+
+    function download90sIDCard() {
+      playKnobClick();
+      var canvas = document.getElementById('idCanvas');
+      if (!canvas) return;
+      var nameInput = document.getElementById('idName');
+      var name = (nameInput && nameInput.value.trim()) ? nameInput.value.trim() : '90s_Kid';
+      var fileName = `${name.replace(/\s+/g, '_')}_90s_ID_Card.png`;
+
+      var link = document.createElement('a');
+      link.download = fileName;
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+    }
+
+    /* ========================================================
+       KHATAR KHOSHRA TIC-TAC-TOE ENGINE
+       ======================================================== */
+    let tictacBoardState = ["", "", "", "", "", "", "", "", ""];
+    let isGameActive = true;
+    const winningCombinations = [
+      [0, 1, 2], [3, 4, 5], [6, 7, 8],
+      [0, 3, 6], [1, 4, 7], [2, 5, 8],
+      [0, 4, 8], [2, 4, 6]
+    ];
+
+    function handleCellClick(index) {
+      if (isPowerCut || !isGameActive || tictacBoardState[index] !== "") return;
+
+      makeMove(index, "X");
+      playPencilScratchSound();
+
+      if (checkWin("X")) {
+        document.getElementById("khataStatus").innerText = "🎉 Jite gecho! Ek packet Phantom Candy paona!";
+        isGameActive = false;
+        return;
+      }
+
+      if (isBoardFull()) {
+        document.getElementById("khataStatus").innerText = "🤝 Match Draw! Tiffin-e abar ladai hobe.";
+        isGameActive = false;
+        return;
+      }
+
+      isGameActive = false;
+      document.getElementById("khataStatus").innerText = "Computer bhabche...";
+      setTimeout(() => {
+        botMove();
+        if (checkWin("O")) {
+          document.getElementById("khataStatus").innerText = "❌ Computer jite geche! Ebar tiffin bhag korte hobe!";
+          isGameActive = false;
+        } else if (isBoardFull()) {
+          document.getElementById("khataStatus").innerText = "🤝 Match Draw! Kata-gol soman-soman.";
+          isGameActive = false;
+        } else {
+          document.getElementById("khataStatus").innerText = "Tomar chal... ✍️";
+          isGameActive = true;
+        }
+      }, 450);
+    }
+
+    function makeMove(index, symbol) {
+      tictacBoardState[index] = symbol;
+      const cells = document.querySelectorAll(".tictac-cell");
+      cells[index].innerText = symbol === "X" ? "✕" : "◯";
+      cells[index].classList.add(symbol === "X" ? "x-mark" : "o-mark");
+    }
+
+    function botMove() {
+      for (let combo of winningCombinations) {
+        const [a, b, c] = combo;
+        if (tictacBoardState[a] === "O" && tictacBoardState[b] === "O" && tictacBoardState[c] === "") return makeMove(c, "O");
+        if (tictacBoardState[a] === "O" && tictacBoardState[c] === "O" && tictacBoardState[b] === "") return makeMove(b, "O");
+        if (tictacBoardState[b] === "O" && tictacBoardState[c] === "O" && tictacBoardState[a] === "") return makeMove(a, "O");
+      }
+      for (let combo of winningCombinations) {
+        const [a, b, c] = combo;
+        if (tictacBoardState[a] === "X" && tictacBoardState[b] === "X" && tictacBoardState[c] === "") return makeMove(c, "O");
+        if (tictacBoardState[a] === "X" && tictacBoardState[c] === "X" && tictacBoardState[b] === "") return makeMove(b, "O");
+        if (tictacBoardState[b] === "X" && tictacBoardState[c] === "X" && tictacBoardState[a] === "") return makeMove(a, "O");
+      }
+      if (tictacBoardState[4] === "") return makeMove(4, "O");
+
+      const available = [];
+      tictacBoardState.forEach((val, idx) => { if (val === "") available.push(idx); });
+      if (available.length > 0) {
+        const randomIdx = available[Math.floor(Math.random() * available.length)];
+        makeMove(randomIdx, "O");
+      }
+    }
+
+    function checkWin(symbol) {
+      return winningCombinations.some(combo => combo.every(idx => tictacBoardState[idx] === symbol));
+    }
+
+    function isBoardFull() {
+      return tictacBoardState.every(val => val !== "");
+    }
+
+    function resetKhataGame() {
+      playKnobClick();
+      tictacBoardState = ["", "", "", "", "", "", "", "", ""];
+      isGameActive = true;
+      document.getElementById("khataStatus").innerText = "Tomar chal... (Click any box)";
+      const cells = document.querySelectorAll(".tictac-cell");
+      cells.forEach(cell => {
+        cell.innerText = "";
+        cell.className = "tictac-cell";
+      });
+    }
+
+    function playPencilScratchSound() {
+      try {
+        const ctx = getAudioContext();
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = "sawtooth";
+        osc.frequency.setValueAtTime(800, ctx.currentTime);
+        osc.frequency.linearRampToValueAtTime(1400, ctx.currentTime + 0.05);
+        gain.gain.setValueAtTime(0.06, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.06);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start();
+        osc.stop(ctx.currentTime + 0.07);
+      } catch (e) {}
+    }
+
+    /* ========================================================
+       WEB AUDIO SYNTHESIZER: CEILING FAN & EVENING RAIN
+       ======================================================== */
+    let fanNode = null;
+    let fanGain = null;
+    let isFanOn = false;
+
+    let rainNode = null;
+    let rainGain = null;
+    let isRainOn = false;
+
+    function toggleFanHum() {
+      playKnobClick();
+      const ctx = getAudioContext();
+      const btn = document.getElementById('btn-fan');
+
+      if (isFanOn) {
+        if (fanGain) {
+          fanGain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + 0.5);
+          setTimeout(() => {
+            if (fanNode) { fanNode.stop(); fanNode.disconnect(); }
+            fanNode = null;
+          }, 500);
+        }
+        isFanOn = false;
+        btn.classList.remove('active');
+      } else {
+        const bufferSize = ctx.sampleRate * 2;
+        const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+        const data = buffer.getChannelData(0);
+        let lastOut = 0.0;
+        for (let i = 0; i < bufferSize; i++) {
+          const white = Math.random() * 2 - 1;
+          data[i] = (lastOut + (0.02 * white)) / 1.02;
+          lastOut = data[i];
+          data[i] *= 3.5;
+        }
+
+        fanNode = ctx.createBufferSource();
+        fanNode.buffer = buffer;
+        fanNode.loop = true;
+
+        const filter = ctx.createBiquadFilter();
+        filter.type = 'lowpass';
+        filter.frequency.setValueAtTime(160, ctx.currentTime);
+
+        fanGain = ctx.createGain();
+        fanGain.gain.setValueAtTime(0.0001, ctx.currentTime);
+        fanGain.gain.exponentialRampToValueAtTime(0.18, ctx.currentTime + 0.5);
+
+        fanNode.connect(filter);
+        filter.connect(fanGain);
+        fanGain.connect(ctx.destination);
+
+        fanNode.start();
+        isFanOn = true;
+        btn.classList.add('active');
+      }
+    }
+
+    function toggleRainSound() {
+      playKnobClick();
+      const ctx = getAudioContext();
+      const btn = document.getElementById('btn-rain');
+
+      if (isRainOn) {
+        if (rainGain) {
+          rainGain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + 0.6);
+          setTimeout(() => {
+            if (rainNode) { rainNode.stop(); rainNode.disconnect(); }
+            rainNode = null;
+          }, 600);
+        }
+        isRainOn = false;
+        btn.classList.remove('active');
+      } else {
+        const bufferSize = ctx.sampleRate * 2;
+        const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+        const data = buffer.getChannelData(0);
+        let b0 = 0, b1 = 0, b2 = 0;
+        for (let i = 0; i < bufferSize; i++) {
+          const white = Math.random() * 2 - 1;
+          b0 = 0.99886 * b0 + white * 0.0555179;
+          b1 = 0.99332 * b1 + white * 0.0750759;
+          b2 = 0.96900 * b2 + white * 0.1538520;
+          data[i] = (b0 + b1 + b2 + white * 0.5362) * 0.08;
+        }
+
+        rainNode = ctx.createBufferSource();
+        rainNode.buffer = buffer;
+        rainNode.loop = true;
+
+        const filter = ctx.createBiquadFilter();
+        filter.type = 'lowpass';
+        filter.frequency.setValueAtTime(1200, ctx.currentTime);
+
+        rainGain = ctx.createGain();
+        rainGain.gain.setValueAtTime(0.0001, ctx.currentTime);
+        rainGain.gain.exponentialRampToValueAtTime(0.12, ctx.currentTime + 0.6);
+
+        rainNode.connect(filter);
+        filter.connect(rainGain);
+        rainGain.connect(ctx.destination);
+
+        rainNode.start();
+        isRainOn = true;
+        btn.classList.add('active');
+      }
+    }
+
+    /* ========================================================
+       AUDIO CONTEXT & UTILS
+       ======================================================== */
+    let audioCtx = null;
+
+    function getAudioContext() {
+      if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+      return audioCtx;
+    }
+
+    function playKnobClick() {
+      try {
+        const ctx = getAudioContext();
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(140, ctx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(30, ctx.currentTime + 0.06);
+        gain.gain.setValueAtTime(0.4, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.06);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start();
+        osc.stop(ctx.currentTime + 0.07);
+      } catch (e) {}
+    }
+
+    function playStaticBurst() {
+      try {
+        const ctx = getAudioContext();
+        const bufferSize = ctx.sampleRate * 0.15;
+        const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+        const data = buffer.getChannelData(0);
+        for (let i = 0; i < bufferSize; i++) {
+          data[i] = Math.random() * 2 - 1;
+        }
+        const noise = ctx.createBufferSource();
+        noise.buffer = buffer;
+        const gain = ctx.createGain();
+        gain.gain.setValueAtTime(0.12, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.15);
+        noise.connect(gain);
+        gain.connect(ctx.destination);
+        noise.start();
+      } catch (e) {}
+    }
+
+    function triggerBrickBeep() {
+      try {
+        const ctx = getAudioContext();
+        const tones = [523.25, 659.25, 783.99, 1046.50];
+        tones.forEach((freq, idx) => {
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.type = 'square';
+          osc.frequency.setValueAtTime(freq, ctx.currentTime + idx * 0.08);
+          gain.gain.setValueAtTime(0.15, ctx.currentTime + idx * 0.08);
+          gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + idx * 0.08 + 0.07);
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          osc.start(ctx.currentTime + idx * 0.08);
+          osc.stop(ctx.currentTime + idx * 0.08 + 0.07);
+        });
+      } catch (e) {}
+    }
+
+    function triggerWaterRing() {
+      playKnobClick();
+      const ringIcon = document.getElementById('waterRingIcon');
+      ringIcon.style.transform = 'translateY(-12px) rotate(18deg)';
+      setTimeout(() => {
+        ringIcon.style.transform = 'translateY(0) rotate(0deg)';
+      }, 250);
+    }
+
+    function triggerMiltonClick() {
+      playKnobClick();
+      alert("🎒 Milton Water Bottle: 'Ektu jol khabi? Kintu bottle-e mukh lagabi na!'");
+    }
+
+    function triggerHeadphoneClick() {
+      playKnobClick();
+      toggleAudio();
+    }
+
+    let cricketOsc = null;
+    let cricketGain = null;
+
+    function startCricketSound() {
+      try {
+        const ctx = getAudioContext();
+        cricketOsc = ctx.createOscillator();
+        cricketGain = ctx.createGain();
+        cricketOsc.type = 'sawtooth';
+        cricketOsc.frequency.setValueAtTime(4500, ctx.currentTime);
+        cricketGain.gain.setValueAtTime(0.02, ctx.currentTime);
+        cricketOsc.connect(cricketGain);
+        cricketGain.connect(ctx.destination);
+        cricketOsc.start();
+      } catch (e) {}
+    }
+
+    function stopCricketSound() {
+      if (cricketOsc) {
+        try {
+          cricketOsc.stop();
+          cricketOsc.disconnect();
+        } catch (e) {}
+        cricketOsc = null;
+      }
+    }
+
+    /* ========================================================
+       LOAD-SHEDDING TOGGLE
+       ======================================================== */
+    let isPowerCut = false;
+    const bodyEl = document.body;
+    const powerSwitch = document.getElementById('powerSwitch');
+    const videoElement = document.getElementById('main-display-video');
+
+    function togglePowerCut() {
+      playKnobClick();
+      isPowerCut = !isPowerCut;
+      if (isPowerCut && isFanOn) {
+        toggleFanHum();
+      }
+
+      if (isPowerCut) {
+        bodyEl.classList.add('power-cut');
+        powerSwitch.classList.add('cut');
+
+        if (videoElement) videoElement.pause();
+        if (tvAudio) tvAudio.pause();
+        if (typeof audioEl !== 'undefined' && !audioEl.paused) {
+          audioEl.pause();
+          if (playBtn) playBtn.innerHTML = '<i class="fa-solid fa-play"></i>';
+          if (reel1) reel1.classList.remove('playing');
+          if (reel2) reel2.classList.remove('playing');
+        }
+        startCricketSound();
+      } else {
+        bodyEl.classList.remove('power-cut');
+        powerSwitch.classList.remove('cut');
+        if (videoElement) videoElement.play().catch(() => {});
+        stopCricketSound();
+      }
+    }
+
+    function flipCard(cardEl) {
+      playKnobClick();
+      cardEl.classList.toggle('flipped');
+    }
+
+    /* ========================================================
+       90s ICONIC TV COMMERCIALS (DOORDARSHAN ADS)
+       ======================================================== */
+    const channels = [
+      {
+        ch: "AD 01: CADBURY DAIRY MILK (ASLI SWAAD)",
+        video: "videos/cadbury.mp4",
+        desc: "🍫 Cricket stadium-e nachar sei memorable Shimona Rashi dance!"
+      },
+      {
+        ch: "AD 02: HAMARA BAJAJ (CHETAK)",
+        video: "videos/bajaj.mp4",
+        desc: "🛵 'Buland Bharat Ki Buland Tasveer... Hamara Bajaj!'"
+      },
+      {
+        ch: "AD 03: DHARA JALEBI (BABLU)",
+        video: "videos/dhara.mp4",
+        desc: "🍯 'Ghar chhod ke jaa raha hoon... Lekin mummy ne Jalebi banayi hai!'"
+      },
+      {
+        ch: "AD 04: VICCO TURMERIC",
+        video: "videos/vicco.mp4",
+        desc: "✨ 'Vicco Turmeric Ayurvedic Cream... Twacha ki suraksha kare!'"
+      },
+      {
+        ch: "AD 05: FEVIKWIK (CHHUTKI MEIN CHIPKAYE)",
+        video: "videos/fevikwik.mp4",
+        desc: "🎣 'Chhutki mein chipkaye... Machhli pakadne wala classic ad!'"
+      },
+      {
+        ch: "AD 06: WASHING POWDER NIRMA",
+        video: "videos/nirma.mp4",
+        desc: "🫧 'Washing Powder Nirma... Hema, Rekha, Jaya aur Sushma!' (1990s)"
+      },
+      {
+        ch: "AD 07: BABA ELAICHI / PAN PARAG",
+        video: "videos/panparag.mp4",
+        desc: "🤵 Shammi Kapoor & Ashok Kumar: 'Baraatiyon ka swagat!'"
+      },
+      {
+        ch: "AD 08: ACTION SHOES",
+        video: "videos/action-shoes.mp4",
+        desc: "👟 'O ho ho School Time... Action Ka School Time!'"
+      },
+      {
+        ch: "AD 09: RASNA",
+        video: "videos/rasna.mp4",
+        desc: "🍹 'I Love You Rasna!' Goromer dupure 100 glass sharbat."
+      },
+      {
+        ch: "AD 10: COMPLAN",
+        video: "videos/complan.mp4",
+        desc: "🥛 'I am a Complan Boy, I am a Complan Girl!'"
+      },
+      {
+        ch: "AD 11: LIRIL LIME",
+        video: "videos/liril.mp4",
+        desc: "🌿 Waterfall-er niche Liril jingle 'La-la-la-la-la-la!'"
+      },
+      {
+        ch: "AD 12: PARLE-G",
+        video: "videos/parle-g.mp4",
+        desc: "☕ Cha-e biscuit dubiye kheye 'G Maane Genius!'"
+      },
+      {
+        ch: "AD 13: AMUL BUTTER",
+        video: "videos/amul.mp4",
+        desc: "🧈 'Amul... The Taste of India! Makhan chor Amul butter girl.'"
+      },
+      {
+        ch: "AD 14: NATARAJ PENCIL",
+        video: "videos/nataraj.mp4",
+        desc: "✏️ 'Phir se chamka Nataraj!' Lal-kalo dagi classic pencil."
+      }
+    ];
+
+    let current = 0;
+    let knobAngle = 0;
+    const tvAudio = document.getElementById('tv-channel-audio');
+    const osdCh = document.getElementById('osd-channel');
+    const osdDesc = document.getElementById('osd-desc');
+    const tapeBtns = document.querySelectorAll('.tape-btn');
+    const chKnob = document.getElementById('channel-knob');
+    const staticOverlay = document.getElementById('static-screen');
+
+    function switchChannel(index) {
+      if (isPowerCut) return;
+      current = index;
+      playKnobClick();
+      playStaticBurst();
+
+      if (typeof audioEl !== 'undefined' && !audioEl.paused) {
+        audioEl.pause();
+        if (playBtn) playBtn.innerHTML = '<i class="fa-solid fa-play"></i>';
+        if (reel1) reel1.classList.remove('playing');
+        if (reel2) reel2.classList.remove('playing');
+      }
+
+      knobAngle += 45;
+      chKnob.style.transform = `rotate(${knobAngle}deg)`;
+
+      staticOverlay.classList.add('active');
+      videoElement.style.opacity = '0.2';
+
+      setTimeout(() => {
+        videoElement.src = channels[current].video;
+        videoElement.muted = false;
+        videoElement.volume = 0.8;
+        videoElement.load();
+        videoElement.play().catch(e => console.log(e));
+
+        osdCh.innerText = channels[current].ch;
+        osdDesc.innerText = channels[current].desc;
+        videoElement.style.opacity = '1';
+        staticOverlay.classList.remove('active');
+      }, 180);
+
+      tapeBtns.forEach((btn, idx) => {
+        btn.classList.toggle('active', idx === current);
+      });
+    }
+
+    function nextChannel() {
+      if (isPowerCut) return;
+      current = (current + 1) % channels.length;
+      switchChannel(current);
+    }
+
+    function toggleNoise() {
+      if (isPowerCut) return;
+      playKnobClick();
+      playStaticBurst();
+      staticOverlay.classList.toggle('active');
+      if (staticOverlay.classList.contains('active')) {
+        videoElement.pause();
+      } else {
+        videoElement.play().catch(() => {});
+      }
+    }
+
+    // Auto next ad play when previous video finishes
+    if (videoElement) {
+      videoElement.addEventListener('ended', () => {
+        nextChannel();
+      });
+    }
+
+    /* ========================================================
+       WALKMAN CASSETTE PLAYER SETUP
+       ======================================================== */
+    const playlist = [
+      { title: "TAPE 1: Doordarshan Signature Tune (DD1)", src: "audio/Doordarshan-freedom.mp3" },
+      { title: "TAPE 2: School Chale Hum (1990s Doordarshan)", src: "audio/Schoolchalehum.mp3" },
+      { title: "TAPE 3: Malgudi Days (Tanana Tana Na Na)", src: "audio/Malgudidays.mp3" },
+      { title: "TAPE 4: Shaktimaan Title Song (1997)", src: "audio/Shaktimaan.mp3" },
+      { title: "TAPE 5: Mile Sur Mera Tumhara (Ek Sur)", src: "audio/Mile Sur Mera Tumhar.mp3" },
+      { title: "TAPE 6: Mahabharat Title Song (Doordarshan)", src: "audio/Mahaabhaarat.mp3" },
+      { title: "TAPE 7: Krishna Ramanand (Doordarshan Bhajan)", src: "audio/Krishna Ramanand.mp3" },
+      { title: "TAPE 8: Nerolac Paint Ad Jingle (1990s)", src: "audio/OriginalNerolacPaint.mp3" },
+      { title: "TAPE 9: Doordarshan Vintage Theme", src: "audio/Doordarshan.mp3" }
+    ];
+
+    let currentTrackIdx = 0;
+    const audioEl = document.getElementById('walkman-audio');
+    const tapeName = document.getElementById('tape-name');
+    const playBtn = document.getElementById('play-pause-btn');
+    const reel1 = document.getElementById('reel-1');
+    const reel2 = document.getElementById('reel-2');
+    const timeDisplay = document.getElementById('walkman-time');
+
+    function loadTrack(idx) {
+      currentTrackIdx = (idx + playlist.length) % playlist.length;
+      audioEl.src = playlist[currentTrackIdx].src;
+      tapeName.innerText = playlist[currentTrackIdx].title;
+    }
+
+    function initWalkmanAutoplay() {
+      loadTrack(0);
+    }
+
+    initWalkmanAutoplay();
+
+    function toggleAudio() {
+      if (isPowerCut) return;
+      playKnobClick();
+      if (audioEl.paused) {
+        audioEl.play().then(() => {
+          playBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';
+          reel1.classList.add('playing');
+          reel2.classList.add('playing');
+        }).catch(err => console.log(err));
+      } else {
+        audioEl.pause();
+        playBtn.innerHTML = '<i class="fa-solid fa-play"></i>';
+        reel1.classList.remove('playing');
+        reel2.classList.remove('playing');
+      }
+    }
+
+    function prevTrack() {
+      if (isPowerCut) return;
+      playKnobClick();
+      const wasPlaying = !audioEl.paused;
+      loadTrack(currentTrackIdx - 1);
+      if (wasPlaying) audioEl.play();
+    }
+
+    function nextTrack() {
+      if (isPowerCut) return;
+      playKnobClick();
+      const wasPlaying = !audioEl.paused;
+      loadTrack(currentTrackIdx + 1);
+      if (wasPlaying) audioEl.play();
+    }
+
+    function seekAudio(sec) {
+      if (isPowerCut) return;
+      playKnobClick();
+      audioEl.currentTime = Math.max(0, Math.min(audioEl.duration || 0, audioEl.currentTime + sec));
+    }
+
+    function formatTime(s) {
+      if (isNaN(s)) return "00:00";
+      const m = Math.floor(s / 60);
+      const sec = Math.floor(s % 60);
+      return `${String(m).padStart(2, '0')}:${String(sec).padStart(2, '0')}`;
+    }
+
+    audioEl.addEventListener('timeupdate', () => {
+      timeDisplay.innerText = `${formatTime(audioEl.currentTime)} / ${formatTime(audioEl.duration)}`;
+    });
+
+    audioEl.addEventListener('ended', () => nextTrack());
+
+    /* ========================================================
+       MODAL LIGHTBOX
+       ======================================================== */
+    const modal = document.getElementById('photo-modal');
+    const modalImg = document.getElementById('modal-img');
+    const modalTitle = document.getElementById('modal-title');
+    const modalDesc = document.getElementById('modal-desc');
+
+    function openModal(src, title, desc) {
+      playKnobClick();
+      modalImg.src = src;
+      modalTitle.innerText = title;
+      modalDesc.innerText = desc;
+      modal.classList.add('active');
+    }
+
+    function closeModal() {
+      playKnobClick();
+      modal.classList.remove('active');
+    }
+
+    /* ========================================================
+       TRIVIA QUIZ
+       ======================================================== */
+    const quizData = [
+      {
+        q: "1. 90s-er cassette phite gutiye rewind korte kon jinish-ta use kora hoto?",
+        opts: ["Chamoch", "Nataraj Pencil", "Scale", "Eraser"],
+        ans: 1
+      },
+      {
+        q: "2. Shaktimaan serial-er famous villian 'Kilvish'-er slogan ki chilo?",
+        opts: ["Mogambo Khush Hua", "Andhera Kayam Rahe", "Shaka Laka Boom Boom", "Crime Master Gogo"],
+        ans: 1
+      },
+      {
+        q: "3. Shondhye 5-tay Cartoon Network-e dujon fighter pilot birol-er cartoon konti chilo?",
+        opts: ["Dexter's Lab", "Swat Kats", "Tom and Jerry", "Captain Planet"],
+        ans: 1
+      }
+    ];
+
+    let currentQ = 0;
+
+    function renderQuiz() {
+      const q = quizData[currentQ];
+      document.getElementById('quiz-q').innerText = q.q;
+      const optsContainer = document.getElementById('quiz-opts');
+      optsContainer.innerHTML = '';
+      document.getElementById('quiz-res').innerText = '';
+
+      q.opts.forEach((opt, idx) => {
+        const btn = document.createElement('button');
+        btn.className = 'option-btn';
+        btn.innerText = opt;
+        btn.onclick = () => checkAnswer(idx);
+        optsContainer.appendChild(btn);
+      });
+    }
+
+    function checkAnswer(chosen) {
+      const res = document.getElementById('quiz-res');
+      playKnobClick();
+      if (chosen === quizData[currentQ].ans) {
+        res.innerHTML = "🎉 Ekdom Thik! Real 90s Kid!";
+        res.style.color = "#15803d";
+        setTimeout(() => {
+          currentQ = (currentQ + 1) % quizData.length;
+          renderQuiz();
+        }, 1500);
+      } else {
+        res.innerHTML = "❌ Bhul hoyeche! Abar chesta korun.";
+        res.style.color = "#b91c1c";
+      }
+    }
+
+    renderQuiz();
+
+    /* ========================================================
+       GUESTBOOK / DIARY
+       ======================================================== */
+    const defaultEntries = [
+      { name: "Rahul (1998)", text: "Sunday sokal 10 tay Shaktimaan dekha ar bikel 4 tay cricket!" },
+      { name: "Priya", text: "Nataraj pencil chhele sharpener-e choto kore box-e sajie rakhtam." }
+    ];
+
+    function getEntries() {
+      const saved = localStorage.getItem('90s_diary_entries');
+      return saved ? JSON.parse(saved) : defaultEntries;
+    }
+
+    function renderDiary() {
+      const list = getEntries();
+      const container = document.getElementById('diary-entries');
+      container.innerHTML = '';
+      list.forEach(entry => {
+        const item = document.createElement('div');
+        item.className = 'diary-entry';
+        item.innerHTML = `<strong>${entry.name}:</strong> "${entry.text}"`;
+        container.appendChild(item);
+      });
+    }
+
+    function saveMemory(e) {
+      e.preventDefault();
+      playKnobClick();
+      const author = document.getElementById('author').value.trim();
+      const msg = document.getElementById('message').value.trim();
+      if (!author || !msg) return;
+
+      const list = getEntries();
+      list.unshift({ name: author, text: msg });
+      localStorage.setItem('90s_diary_entries', JSON.stringify(list));
+
+      document.getElementById('author').value = '';
+      document.getElementById('message').value = '';
+      renderDiary();
+    }
+
+    renderDiary();
+
+    // Initial ID Card Draw
+    draw90sIDCard();
+  </script>
+</body>
+</html>
