@@ -53,15 +53,150 @@
 }
 
 /* Background image mobile layout on chhotto screen-e blur na hye bose jabe */
+/* ========================================================
+   HIGH-PERFORMANCE MOBILE & TABLET RESPONSIVE FIX
+   ======================================================== */
 @media (max-width: 850px) {
   body {
-    background: 
-      linear-gradient(
-        rgba(35, 17, 8, 0.45),
-        rgba(15, 6, 2, 0.78)
-      ),
-      url('images/bg-room.png') no-repeat 35% center fixed; /* Mobile portrait focus adjustment */
-    background-size: cover;
+    padding: 12px 8px 40px !important;
+    background-attachment: scroll !important; /* Mobile scroll lag bondho */
+  }
+
+  .room-header h1 {
+    font-size: 2.2rem !important;
+    letter-spacing: 1px;
+  }
+
+  .room-header p {
+    font-size: 1rem !important;
+  }
+
+  /* Single column vertical flow */
+  .living-stage {
+    grid-template-columns: 100% !important;
+    gap: 16px !important;
+  }
+
+  .tv-column-wrap {
+    width: 100% !important;
+  }
+
+  /* Responsive CRT TV Frame */
+  .crt-television {
+    grid-template-columns: 1fr !important;
+    padding: 12px !important;
+    border-width: 4px !important;
+    gap: 10px !important;
+  }
+
+  .tv-glass {
+    height: 220px !important; /* Mobile friendly screen height */
+    border-radius: 16px !important;
+    border-width: 5px !important;
+  }
+
+  .channel-osd {
+    font-size: 1.3rem !important;
+    top: 8px !important;
+    left: 10px !important;
+  }
+
+  .channel-title-osd {
+    font-size: 1rem !important;
+    bottom: 6px !important;
+    left: 8px !important;
+    right: 8px !important;
+    padding: 4px 6px !important;
+  }
+
+  /* Knobs row */
+  .tv-knob-panel {
+    flex-direction: row !important;
+    justify-content: space-around !important;
+    padding: 4px 0 !important;
+  }
+
+  .knob {
+    width: 44px !important;
+    height: 44px !important;
+  }
+
+  .speaker-slits {
+    display: none !important;
+  }
+
+  /* Under-TV Deck Stand */
+  .tv-deck-stand {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 10px !important;
+    padding: 10px !important;
+  }
+
+  .vcr-top-row {
+    font-size: 0.8rem !important;
+  }
+
+  .vcr-display {
+    font-size: 1.2rem !important;
+  }
+
+  .tv-remote-btn-group {
+    justify-content: center !important;
+  }
+
+  /* Ads Playlist */
+  .shelf-box {
+    padding: 12px !important;
+  }
+
+  .shelf-title {
+    font-size: 1.35rem !important;
+  }
+
+  .tape-list {
+    max-height: 240px !important;
+  }
+
+  .tape-btn {
+    font-size: 0.82rem !important;
+    padding: 6px 10px !important;
+  }
+
+  /* Interactive items & grids */
+  .desk-grid,
+  .album-grid,
+  .cards-grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)) !important;
+    gap: 12px !important;
+  }
+
+  .gadget-thumb {
+    max-width: 120px !important;
+    height: 120px !important;
+  }
+
+  .interactive-row {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .id-form-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  #idCanvas {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .tictac-board {
+    width: 210px !important;
+    height: 210px !important;
+  }
+
+  .tictac-cell {
+    font-size: 2.4rem !important;
   }
 }
 
@@ -1640,9 +1775,9 @@
             <div class="static-overlay" id="static-screen"></div>
             <div class="channel-osd" id="osd-channel">AD 01: CADBURY</div>
             
-            <video id="main-display-video" loop playsinline preload="metadata">
-              <source src="videos/cadbury.mp4" type="video/mp4">
-            </video>
+            <video id="main-display-video" loop playsinline preload="none">
+  <source src="videos/cadbury.mp4" type="video/mp4">
+</video>
             
             <div class="channel-title-osd" id="osd-desc">
               🍫 Cricket stadium-e nachar sei memorable Shimona Rashi dance!
@@ -1768,7 +1903,7 @@
         <div class="shelf-box">
           <div class="shelf-title">📻 SONY WALKMAN</div>
           <div class="walkman-player">
-            <audio id="walkman-audio" preload="auto"></audio>
+            <audio id="walkman-audio" preload="none"></audio>
 
             <div class="cassette-window">
               <div class="tape-label" id="tape-name">TRACK 1: 90s Chill Memories</div>
