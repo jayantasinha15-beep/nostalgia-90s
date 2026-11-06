@@ -3,105 +3,179 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact | 90s Nostalgia Machine</title>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Patrick+Hand&family=Special+Elite&display=swap" rel="stylesheet">
+  <title>Contact | 90s Sunday Living Room</title>
+  
+  <!-- Retro Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=VT323&family=Patrick+Hand&family=Special+Elite&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
   <style>
+    :root {
+      --room-bg: #140b07;
+      --wood-shelf: #381c0d;
+      --amber-glow: #ffb703;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
-      background: radial-gradient(circle at 50% 25%, #3a1a0c 0%, #150904 80%, #0a0402 100%);
+      background: 
+        linear-gradient(
+          rgba(35, 17, 8, 0.45),
+          rgba(15, 6, 2, 0.72)
+        ),
+        url('images/bg-room.png') no-repeat center center fixed;
+      background-size: cover;
       font-family: 'Patrick Hand', cursive;
-      color: #f1ede4;
-      padding: 40px 20px;
-      line-height: 1.6;
+      color: #fcf8f2;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px 16px 60px;
     }
-    .paper-container {
-      max-width: 750px;
-      margin: 0 auto;
+
+    .container {
+      width: 100%;
+      max-width: 650px;
       background: #fdfbf7;
+      border: 4px solid #b45309;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8);
       color: #2b1d14;
-      border: 4px solid #d4a373;
-      border-radius: 8px;
-      padding: 36px 30px;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.8);
+      position: relative;
     }
-    h1 {
+
+    .back-home {
+      display: inline-block;
+      margin-bottom: 15px;
+      font-family: 'Caveat', cursive;
+      font-size: 1.2rem;
+      color: #9a3412;
+      text-decoration: underline;
+    }
+
+    h2 {
       font-family: 'Caveat', cursive;
       font-size: 2.8rem;
       color: #7c2d12;
-      border-bottom: 2px dashed #d4a373;
-      padding-bottom: 8px;
-      margin-top: 0;
+      text-align: center;
+      margin-bottom: 8px;
     }
+
+    p.subtitle {
+      text-align: center;
+      font-size: 1.1rem;
+      color: #5a341a;
+      margin-bottom: 24px;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
     .form-group {
-      margin-bottom: 16px;
+      display: flex;
+      flex-direction: column;
     }
-    label {
-      display: block;
-      font-size: 1.2rem;
-      margin-bottom: 4px;
+
+    .form-group label {
+      font-size: 1.1rem;
       color: #7c2d12;
+      margin-bottom: 4px;
+      font-weight: bold;
+      font-family: 'Caveat', cursive;
     }
-    input, textarea {
-      width: 100%;
-      padding: 10px;
+
+    .form-group input, 
+    .form-group textarea {
+      padding: 10px 12px;
       border: 2px solid #d4a373;
-      border-radius: 4px;
+      border-radius: 6px;
       background: #fff;
       font-family: 'Patrick Hand', cursive;
       font-size: 1.1rem;
-      box-sizing: border-box;
+      color: #2b1d14;
     }
-    textarea {
-      height: 120px;
+
+    .form-group textarea {
       resize: vertical;
+      height: 120px;
     }
-    button {
+
+    .submit-btn {
       background: #b45309;
       color: #fff;
       border: none;
       padding: 10px 24px;
-      border-radius: 6px;
+      border-radius: 25px;
       font-family: 'Caveat', cursive;
       font-size: 1.4rem;
       cursor: pointer;
-      transition: background 0.2s;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: all 0.2s ease;
+      align-self: center;
+      margin-top: 10px;
     }
-    button:hover {
+
+    .submit-btn:hover {
       background: #7c2d12;
+      transform: translateY(-2px);
     }
-    .back-link {
-      display: inline-block;
-      margin-top: 20px;
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
       font-family: 'Special Elite', cursive;
-      color: #7c2d12;
-      text-decoration: underline;
+      font-size: 0.95rem;
+      color: #fed7aa;
     }
   </style>
 </head>
 <body>
-  <div class="paper-container">
-    <h1>📮 Chithi / Contact Us</h1>
-    <p>Apnar chhotobelar kono priyo smriti ba shujog thakle amader post box-e pathate paren:</p>
 
-    <form onsubmit="event.preventDefault(); alert('Chithi pathano holo! Dhonnobad.');">
+  <div class="container">
+    <a href="index.html" class="back-home">← Back to Home</a>
+    <h2>📬 Contact 90s Living Room</h2>
+    <p class="subtitle">Kono suggestion ba purono memory share korte chan? Amader message pathan!</p>
+
+    <!-- 
+      STEP 3: Google Form Link ekhane connect korte hobe. 
+      Nicher action URL-er jaygay apnar Google Form-er action link bosiye deben.
+    -->
+    <form class="contact-form" action="https://docs.google.com/forms/d/1pGxk_kiJn45VlWeyyYsqKs-oTYYiYbt_y5224qbT31g/formResponse" method="POST" target="_blank">
+      
       <div class="form-group">
         <label for="name">Tomar Naam (Name):</label>
-        <input type="text" id="name" placeholder="Ekhane naam likhun..." required>
+        <input type="text" id="name" name="entry.NAMER_ENTRY_ID" placeholder="Apnar nam likhun..." required>
       </div>
 
       <div class="form-group">
-        <label for="email">Email Thikana:</label>
-        <input type="email" id="email" placeholder="example@domain.com" required>
+        <label for="email">Tomar Email:</label>
+        <input type="email" id="email" name="entry.EMAIL_ENTRY_ID" placeholder="name@example.com" required>
       </div>
 
       <div class="form-group">
-        <label for="msg">Barta / Smriti (Message):</label>
-        <textarea id="msg" placeholder="90s-er kon jinish-ta aro add korle bhalo hoy..." required></textarea>
+        <label for="message">Tomar Message:</label>
+        <textarea id="message" name="entry.MESSAGE_ENTRY_ID" placeholder="Apnar message ba 90s-er golpo..." required></textarea>
       </div>
 
-      <button type="submit">Post Box-e Pathao ✉️</button>
+      <button type="submit" class="submit-btn">Message Pathan 🚀</button>
     </form>
-
-    <a href="index.html" class="back-link">← Back to Living Room</a>
   </div>
+
+  <footer>
+    <p>© 1998–2026 90s Nostalgia Machine. Best viewed on Google Chrome Desktop.</p>
+  </footer>
+
 </body>
 </html>

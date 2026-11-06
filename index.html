@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
+    
     :root {
       --room-bg: #140b07;
       --wood-shelf: #381c0d;
@@ -26,7 +27,7 @@
       padding: 0;
     }
 
- body {
+  body {
   /* Ultra-retro 1990s room background with ujjwal visual readability overlay */
   background: 
     linear-gradient(
@@ -489,7 +490,7 @@
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
       background: linear-gradient(rgba(18, 16, 16, 0) 50%, var(--crt-scanline) 50%),
-                  radial-gradient(circle, transparent 65%, rgba(0, 0, 0, 0.6) 100%);
+                radial-gradient(circle, transparent 65%, rgba(0, 0, 0, 0.6) 100%);
       background-size: 100% 4px, 100% 100%;
       pointer-events: none;
     }
@@ -1014,8 +1015,10 @@
     .album-item img {
       width: 100%;
       height: 160px;
-      object-fit: cover;
+      object-fit: cover !important; /* Shob chobi ke soman frame-e crop korbe */
+      object-position: center center; /* Chobi-r center point focus e rakhbe */
       border-radius: 2px;
+      border: 1px solid #e7ded0;
     }
 
     .album-item h4 {
@@ -1566,7 +1569,8 @@
     .polaroid-modal img {
       width: 100%;
       height: 280px;
-      object-fit: cover;
+      object-fit: contain !important; /* Modal-eo puro chobi dekhabe */
+      background: #fcf8f2;
       border: 1px solid #ddd;
     }
 
@@ -1927,13 +1931,14 @@
 
     </div>
 
-    <!-- 90s RETRO GADGETS DESK / SHELF -->
+    <!-- 90s RETRO GADGETS DESK / SHELF (SHOW MORE ADDED) -->
     <section class="gadgets-desk-section">
       <div class="desk-header">
         <h3>🕹️ Living Room Desk & Purono Gadgets</h3>
         <span style="color:#fcd34d; font-size:1.1rem;">(Gadget-e click kore dekho nostalgia!)</span>
       </div>
 
+      <!-- Initial 4 Gadgets -->
       <div class="desk-grid">
         <div class="gadget-card" onclick="triggerBrickBeep()">
           <img class="gadget-thumb" src="images/brickgame.png" alt="Brick Game">
@@ -1963,20 +1968,60 @@
           <span class="gadget-action-hint">🎧 Tape Cassette Sound</span>
         </div>
       </div>
+
+      <!-- Hidden Gadgets -->
+      <div class="desk-grid" id="moreGadgets" style="display: none; margin-top: 20px;">
+        <div class="gadget-card" onclick="toggleAudio()">
+          <img class="gadget-thumb" src="images/walkman.jpg" alt="Sony Walkman">
+          <h4>Sony Walkman Player</h4>
+          <p>Kumar Sanu ar Lucky Ali-r cassette baajiye kaane foam headphone lagiye ghaghra ghurano.</p>
+          <span class="gadget-action-hint">▶️ Click to Play Tape</span>
+        </div>
+
+        <div class="gadget-card" onclick="playKnobClick(); alert('🎮 Video Game Controller: Contra ba Mario khelanar shera machine!')">
+          <img class="gadget-thumb" src="images/videogame.jpg" alt="Video Game Controller">
+          <h4>Video Game Controller</h4>
+          <p>Up Up Down Down Left Right Left Right B A Start! Video game parlor-er jadu.</p>
+          <span class="gadget-action-hint">🕹️ Classic 16-bit</span>
+        </div>
+
+        <div class="gadget-card" onclick="playKnobClick(); alert('🐍 Nokia 3310: Snake game-e high score ke banchabe?')">
+          <img class="gadget-thumb" src="images/nokia.jpg" alt="Nokia 3310">
+          <h4>Nokia Brick Phone</h4>
+          <p>Bhanga jay na, battery 1 week cholto! Ar ghumanor age Snake game-er nisha.</p>
+          <span class="gadget-action-hint">🐍 Snake Game King</span>
+        </div>
+
+        <div class="gadget-card" onclick="playKnobClick(); alert('☎️ Rotary Phone: Ghori ghurie number dial kora ekta shilpo chilo!')">
+          <img class="gadget-thumb" src="images/landline.jpg" alt="Rotary Phone">
+          <h4>Vintage Rotary Phone</h4>
+          <p>Kalo ba maroon color-er heavy body, gol gol ghurano dialer-er phone.</p>
+          <span class="gadget-action-hint">📞 Ring Ring...</span>
+        </div>
+      </div>
+
+      <!-- Toggle Button -->
+      <div style="text-align: center; margin-top: 20px;">
+        <button class="id-action-btn" onclick="toggleSection('moreGadgets', 'btnTextGadget', 'btnIconGadget')" style="background: #b45309; cursor: pointer;">
+          <span id="btnTextGadget">Show More...</span>
+          <i class="fa-solid fa-chevron-down" id="btnIconGadget"></i>
+        </button>
+      </div>
     </section>
 
-    <!-- Scrapbook Photo Album Grid -->
+    <!-- Scrapbook Photo Album Grid (SHOW MORE ADDED) -->
     <section class="scrapbook-section">
       <div class="scrapbook-header">
         <h2>Chhotobelar Photo Album</h2>
         <span style="font-size: 1.1rem; color:#888;">(Click any picture to enlarge)</span>
       </div>
 
+      <!-- Initial 4 Photos -->
       <div class="album-grid">
         <div class="album-item" onclick="openModal('images/videogames.png', 'Video Game Parlour', '1 takay 1 ta coin ar Street Fighter ba Mario-r uttejna!')">
           <img src="images/videogames.png" alt="Video Games">
           <h4>Video Game Parlour</h4>
-          <p>1 takay 1 ta coin ar Mario-r uttejna!</p>
+          <p>1 takay 1 ta coin ar Street Fighter, Mario ba Contra-r uttejna! School-er pore dosto-der sathe arcade parlor-e giye 8-bit game khelanar shonghatik nisha.</p>
         </div>
 
         <div class="album-item" onclick="openModal('images/cassette.png', 'Cassette Tape Collection', 'Kumar Sanu ar Lucky Ali-r gaan baje Walkman-e.')">
@@ -1985,27 +2030,57 @@
           <p>Kumar Sanu ar Lucky Ali-r gaan baje Walkman-e.</p>
         </div>
 
-        <div class="album-item" onclick="openModal('images/cartoons.jpg', 'Cartoon Network Mornings', 'Dexter, Swat Kats ar Tom & Jerry-r shundor bikel gulo.')">
-          <img src="images/cartoons.jpg" alt="Cartoons">
+        <div class="album-item" onclick="openModal('images/cartoon.jpg', 'Cartoon Network Mornings', 'Dexter, Swat Kats ar Tom & Jerry-r shundor bikel gulo.')">
+          <img src="images/cartoon.jpg" alt="Cartoons">
           <h4>Cartoon Network Mornings</h4>
           <p>Dexter, Swat Kats ar Tom & Jerry-r bikel.</p>
         </div>
 
-        <div class="album-item" onclick="openModal('images/cricket.png', 'Bikel 4 Ter Gully Cricket', 'Ball harale khuje anar shoto shorot!')">
-          <img src="images/cricket.png" alt="Cricket">
+        <div class="album-item" onclick="openModal('images/cricket.jpg', 'Bikel 4 Ter Gully Cricket', 'Ball harale khuje anar shoto shorot!')">
+          <img src="images/cricket.jpg" alt="Cricket">
           <h4>Bikel 4 Ter Gully Cricket</h4>
           <p>Ball harale khuje anar shoto shorot!</p>
         </div>
       </div>
+
+      <!-- Hidden Photos -->
+      <div class="album-grid" id="moreAlbum" style="display: none; margin-top: 20px;">
+        <div class="album-item" onclick="openModal('images/tiffin.jpg', 'Steel Tiffin Box', 'Alur chop ba chowmein bhara school tiffin box-er jonno tiffin-er gontar opekha!')">
+          <img src="images/tiffin.jpg" alt="Steel Tiffin">
+          <h4>Steel Tiffin Box</h4>
+          <p>Alur chop ba chowmein bhara school tiffin box!</p>
+        </div>
+
+        <div class="album-item" onclick="openModal('images/tyre.png', 'Cycle Tyre Racing', 'Tyre Gari! Grammar dustar pothe long bamboo stick diye cycle-er purono tyre guriye dorar uttejna.')">
+          <img src="images/tyre.png" alt="Cycle Tyre Racing">
+          <h4>Cycle Tyre Racing</h4>
+          <p>Gramar dustar pothe tyre guriye dora.</p>
+        </div>
+
+        <div class="album-item" onclick="openModal('images/cycle.jpg', 'Bicycle Tube Ride', 'Cycle-er purono tube kete tire-er moddhe dhukiye bikelbela ghur ghur kora.')">
+          <img src="images/cycle.jpg" alt="Cycle Ride">
+          <h4>Bicycle Tube Ride</h4>
+          <p>Cycle-er tube kete ghur ghur kora.</p>
+        </div>
+      </div>
+
+      <!-- Toggle Button -->
+      <div style="text-align: center; margin-top: 20px;">
+        <button class="id-action-btn" onclick="toggleSection('moreAlbum', 'btnTextAlbum', 'btnIconAlbum')" style="background: #9a3412; cursor: pointer;">
+          <span id="btnTextAlbum">Show More...</span>
+          <i class="fa-solid fa-chevron-down" id="btnIconAlbum"></i>
+        </button>
+      </div>
     </section>
 
-    <!-- 90s Khajna Tray (Flip Cards) -->
+    <!-- 90s Khajna Tray (Flip Cards) (SHOW MORE ADDED) -->
     <section class="memory-tray-section">
       <div class="tray-header">
         <h3>🧰 90s Khajna Tray</h3>
         <p>Card gulate click kore dekho chhotobelar gopon memory!</p>
       </div>
 
+      <!-- Initial 2 Cards -->
       <div class="cards-grid">
         <div class="flip-card" onclick="flipCard(this)">
           <div class="flip-card-inner">
@@ -2034,7 +2109,10 @@
             </div>
           </div>
         </div>
+      </div>
 
+      <!-- Hidden Cards -->
+      <div class="cards-grid" id="moreTray" style="display: none; margin-top: 18px;">
         <div class="flip-card" onclick="flipCard(this)">
           <div class="flip-card-inner">
             <div class="flip-front">
@@ -2063,8 +2141,15 @@
           </div>
         </div>
       </div>
-    </section>
 
+      <!-- Toggle Button -->
+      <div style="text-align: center; margin-top: 20px;">
+        <button class="id-action-btn" onclick="toggleSection('moreTray', 'btnTextTray', 'btnIconTray')" style="background: #b45309; cursor: pointer;">
+          <span id="btnTextTray">Show More Memories...</span>
+          <i class="fa-solid fa-chevron-down" id="btnIconTray"></i>
+        </button>
+      </div>
+    </section>
 
     <!-- Trivia Quiz & Memory Diary -->
     <div class="interactive-row">
@@ -2088,7 +2173,8 @@
 
     <!-- FOOTER -->
     <footer style="text-align: center; margin-top: 50px; font-family: 'Special Elite', cursive; font-size: 1rem; color: #fed7aa;">
-      <p>© 1998–2026 90s Nostalgia Machine. Made with ❤️ for 90s Kids.</p>
+      <p>© 1998–2026 90s Nostalgia Machine. Made with ❤️ by Jayanta SIngha.</p>
+      <p style="font-size: 0.85rem; color: #fcd34d; margin-top: 6px;">💡 Best viewed on Google Chrome Desktop for authentic retro experience!</p>
       <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 8px;">
         <a href="about.html" style="color: #fcd34d; text-decoration: underline;">About</a>
         <a href="contact.html" style="color: #fcd34d; text-decoration: underline;">Contact</a>
@@ -2121,6 +2207,28 @@
         btn.innerHTML = '<i class="fa-solid fa-volume-xmark"></i> Mute';
       } else {
         btn.innerHTML = '<i class="fa-solid fa-volume-high"></i> Sound';
+      }
+    }
+
+    /* ========================================================
+       UNIVERSAL TOGGLE FUNCTION FOR SHOW/HIDE SECTIONS
+       ======================================================== */
+    function toggleSection(contentId, btnTextId, btnIconId) {
+      playKnobClick();
+      const content = document.getElementById(contentId);
+      const btnText = document.getElementById(btnTextId);
+      const btnIcon = document.getElementById(btnIconId);
+
+      if (content.style.display === 'none') {
+        content.style.display = 'grid';
+        btnText.innerText = 'Show Less...';
+        btnIcon.classList.remove('fa-chevron-down');
+        btnIcon.classList.add('fa-chevron-up');
+      } else {
+        content.style.display = 'none';
+        btnText.innerText = btnTextId.includes('Gadget') ? 'Show More...' : (btnTextId.includes('Album') ? 'Show More Photos...' : 'Show More Memories...');
+        btnIcon.classList.remove('fa-chevron-up');
+        btnIcon.classList.add('fa-chevron-down');
       }
     }
 
@@ -2845,8 +2953,8 @@
        WALKMAN CASSETTE PLAYER SETUP
        ======================================================== */
     const playlist = [
-      { title: "TAPE 1: Doordarshan Signature Tune (DD1)", src: "audio/Doordarshan-freedom.mp3" },
-      { title: "TAPE 2: School Chale Hum (1990s Doordarshan)", src: "audio/Schoolchalehum.mp3" },
+      { title: "TAPE 1: School Chale Hum (1990s Doordarshan)", src: "audio/Schoolchalehum.mp3" },
+      { title: "TAPE 2: Doordarshan Signature Tune (DD1)", src: "audio/Doordarshan-freedom.mp3" },
       { title: "TAPE 3: Malgudi Days (Tanana Tana Na Na)", src: "audio/Malgudidays.mp3" },
       { title: "TAPE 4: Shaktimaan Title Song (1997)", src: "audio/Shaktimaan.mp3" },
       { title: "TAPE 5: Mile Sur Mera Tumhara (Ek Sur)", src: "audio/Mile Sur Mera Tumhar.mp3" },
@@ -3048,9 +3156,6 @@
     }
 
     renderDiary();
-
-    // Initial ID Card Draw
-    draw90sIDCard();
   </script>
 </body>
 </html>
